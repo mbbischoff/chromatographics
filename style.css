@@ -56,7 +56,8 @@ section.poems {
 article.poem {
     background-color: #FFF5F6;
     padding-block: 1rem;
-    padding-inline: 3rem;
+    padding-inline-start: 1rem;
+    padding-inline-end: 12rem;
     text-align: left;
 }
 
