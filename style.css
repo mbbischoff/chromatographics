@@ -36,4 +36,5 @@ section.poems {
 article.poem {
     background-color: #FFF5F6;
     padding: 3rem;
+    text-align: left;
 }
