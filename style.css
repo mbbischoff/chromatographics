@@ -3,6 +3,7 @@
     --color-text: black;
     
     --color-candy-apple-red: #B60017;
+    --moonlit-ocean: #2A3B4E;
 }
 
 @font-face {
@@ -55,10 +56,10 @@ section.poems {
 }
 
 article.poem {
-    background-color: #FFF5F6;
     padding-block: 1rem;
     padding-inline-start: 1rem;
-    padding-inline-end: 12rem;
+    padding-inline-end: 6rem;
+    margin-block-end: 4rem;
     text-align: left;
 }
 
@@ -70,10 +71,26 @@ pre em {
     font-family: 'Lacrima Italic Regular', serif;
 }
 
+article.poem h2 {
+    color: var(--color-candy-apple-red);
+}
+
+#accidentily {
+    background-color: #FFF5F6;
+}
+
 #accidentily .stanzas {
     color: #0A0001;
 }
 
-article.poem h2 {
-    color: var(--color-candy-apple-red);
+#atlantic-pacific {
+    background-color: #F8FAFB;
+}
+
+#atlantic-pacific .stanzas {
+    color: #040507;
+}
+
+#atlantic-pacific h2 {
+    color: var(--moonlit-ocean);
 }
