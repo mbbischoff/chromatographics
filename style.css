@@ -34,7 +34,8 @@ body {
     color: var(--color-text);
     font-family: 'Lacrima Serif Regular', serif;
 
-    margin-inline: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
 header {
