@@ -1,6 +1,8 @@
 :root {
     --color-background: white;
-    --color-text: #0A0001;
+    --color-text: black;
+    
+    --color-candy-apple-red: #B60017;
 }
 
 @font-face {
@@ -27,6 +29,7 @@ header {
 
 h1.title {
     letter-spacing: -0.08em;
+    font-size: 6rem;
 }
 
 section.poems {
@@ -37,4 +40,13 @@ article.poem {
     background-color: #FFF5F6;
     padding: 3rem;
     text-align: left;
+}
+
+
+article.poem.stanzas {
+    color: color-mix(i  n lch, var(--color-candy-apple-red), black 98%);
+}
+
+article.poem h2 {
+    color: var(--color-candy-apple-red);
 }
