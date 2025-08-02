@@ -55,10 +55,18 @@ section.poems {
 
 article.poem {
     background-color: #FFF5F6;
-    padding: 3rem;
+    padding-block: 1rem;
+    padding-inline: 3rem;
     text-align: left;
 }
 
+pre {
+    font-family: 'Lacrima Serif Regular', serif;
+}
+
+pre em {
+    font-family: 'Lacrima Italic Regular', serif;
+}
 
 article.poem.stanzas {
     color: color-mix(i  n lch, var(--color-candy-apple-red), black 98%);
