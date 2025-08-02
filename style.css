@@ -1,5 +1,5 @@
 :root {
-    --color-background: #FFF5F6;
+    --color-background: white;
     --color-text: #0A0001;
 }
 
@@ -11,7 +11,29 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: 'Lacrima Serif Regular', serif;
+}
+
+header {
+    padding: 1rem;
+}
+
+h1.title {
+    
+}
+
+section.poems {
+    padding: 4rem;
+}
+
+article.poem {
+    background-color: #FFF5F6;
+    padding: 3rem;
 }
