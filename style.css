@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Lacrima Italic Regular';
+    src: url('fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
 html {
     font-size: 18px;
 }
@@ -34,11 +41,12 @@ header {
 
 h1.title {
     letter-spacing: -0.08em;
-    font-size: 4rem;
+    font-size: 3rem;
+    margin-bottom: -1rem;
 }
 
 p.subtitle {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 section.poems {
