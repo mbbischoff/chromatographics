@@ -40,13 +40,14 @@ header {
 }
 
 h1.title {
-    letter-spacing: -0.08em;
+    letter-spacing: -0.07em;
     font-size: 3rem;
     margin-bottom: -1rem;
 }
 
 p.subtitle {
     font-size: 1.5rem;
+    color: #333;
 }
 
 section.poems {
@@ -69,8 +70,8 @@ pre em {
     font-family: 'Lacrima Italic Regular', serif;
 }
 
-article.poem.stanzas {
-    color: color-mix(i  n lch, var(--color-candy-apple-red), black 98%);
+#accidentily .stanzas {
+    color: #0A0001;
 }
 
 article.poem h2 {
