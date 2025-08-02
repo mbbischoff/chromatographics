@@ -12,6 +12,10 @@
     font-style: normal;
 }
 
+html {
+    font-size: 18px;
+}
+
 body {
     display: flex;
     flex-direction: column;
@@ -24,12 +28,17 @@ body {
 }
 
 header {
-    padding: 1rem;
+    padding: 2rem;
+    text-align: center;
 }
 
 h1.title {
     letter-spacing: -0.08em;
-    font-size: 6rem;
+    font-size: 4rem;
+}
+
+p.subtitle {
+    font-size: 2rem;
 }
 
 section.poems {
