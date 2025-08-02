@@ -33,6 +33,8 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: 'Lacrima Serif Regular', serif;
+
+    margin-inline: 1rem;
 }
 
 header {
