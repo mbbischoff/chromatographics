@@ -38,7 +38,7 @@ body {
 }
 
 header {
-    padding: 2rem;
+    padding-block: 2rem;
     text-align: center;
 }
 
