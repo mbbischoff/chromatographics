@@ -1,0 +1,17 @@
+:root {
+    --color-background: #FFF5F6;
+    --color-text: #0A0001;
+}
+
+@font-face {
+    font-family: 'Lacrima Serif Regular';
+    src: url('fonts/LacrimaMG-SerifRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: 'Lacrima Serif Regular', serif;
+}
