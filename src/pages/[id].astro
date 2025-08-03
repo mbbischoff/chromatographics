@@ -1,8 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import Layout from '../../layouts/Layout.astro';
-import Poem from '../../components/Poem.astro';
+import Layout from '../layouts/Layout.astro';
+import Poem from '../components/Poem.astro';
 
 export async function getStaticPaths() {
   const poems = await getCollection('poems');
