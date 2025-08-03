@@ -12,9 +12,7 @@ const { Content } = await poem.render();
   {isPermalink ? (
     <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
   ) : (
-    <a href={`/poem/${poem.id}`} class="title-link">
-      <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
-    </a>
+    <h2 style={`color: ${poem.data.titleColor};`} set:html={`<a href="/poem/${poem.id}" class="title-link" style="color: ${poem.data.titleColor}; text-decoration: none;">${poem.data.title}</a>`}></h2>
   )}
   <pre class="stanzas" style={`color: ${poem.data.textColor};`}>
     <Content />
@@ -23,20 +21,17 @@ const { Content } = await poem.render();
 
 <style>
   .poem {
-    margin-block-end: 4rem;
     padding: 2rem;
     border-radius: 8px;
     text-align: left;
+    min-width: 20rem;
+    margin-block-end: 4rem;
   }
   
-  .title-link {
-    text-decoration: none;
-    color: inherit;
+  .poem h2 .title-link {
     display: block;
-  }
-  
-  .title-link:hover h2 {
-    cursor: grabbing;
+    text-decoration: none;
+    font-family: 'Lacrima Serif Bold', serif;
   }
   
   .stanzas {

@@ -17,7 +17,7 @@
 
 @font-face {
     font-family: 'Lacrima Serif Regular';
-    src: url('/src/fonts/LacrimaMG-SerifRegular.otf') format('opentype');
+    src: url('/fonts/LacrimaMG-SerifRegular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
 }
@@ -25,13 +25,13 @@
 
 @font-face {
     font-family: 'Lacrima Serif Bold';
-    src: url('/src/fonts/LacrimaMG-SerifBold.otf') format('opentype');
+    src: url('/fonts/LacrimaMG-SerifBold.otf') format('opentype');
     font-weight: 700;
 }
 
 @font-face {
     font-family: 'Lacrima Serif Regular Italic';
-    src: url('/src/fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
+    src: url('/fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
     font-weight: 400;
     font-style: italic;
 }
@@ -85,8 +85,12 @@ pre {
 pre em {
     font-family: 'Lacrima Serif Regular Italic', serif;
 }
+
 a {
-    color: var(--color-text);
     text-decoration: none;
     font-family: 'Lacrima Serif Bold', serif;
+}
+
+a:hover {
+    cursor: grabbing;
 }
