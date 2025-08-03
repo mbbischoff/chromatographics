@@ -6,6 +6,17 @@
     --moonlit-ocean: #2A3B4E;
 }
 
+@keyframes rainbow {
+    0% { color: rgb(255, 105, 180); }  /* Pink */
+    12.5% { color: rgb(255, 0, 0); } /* Red */
+    25% { color: rgb(255, 142, 0); } /* Orange */
+    37.5% { color: rgb(0, 142, 0); } /* Green */
+    50% { color: rgb(0, 192, 192); } /* Cyan */
+    62.5% { color: rgb(64, 0, 152); } /* Blue */
+    75% { color: rgb(142, 0, 142); } /* Purple */
+    100% { color: rgb(255, 105, 180); } /* Back to pink */
+}
+
 @font-face {
     font-family: 'Lacrima Serif Regular';
     src: url('fonts/LacrimaMG-SerifRegular.otf') format('opentype');
@@ -56,11 +67,11 @@ h1.title {
     font-size: 2rem;
     margin-bottom: -0.7rem;
     font-family: 'Lacrima Serif Bold', serif;
-
+    animation: rainbow 10s infinite;
 }
 
 p.subtitle {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
     letter-spacing: -0.03em;
     color: #333;
 }
@@ -116,7 +127,7 @@ article.poem h2 {
 
 
 a {
-    color: var(--color-candy-apple-red);
+    color: var(--color-text);
     text-decoration: none;
     font-family: 'Lacrima Serif Bold', serif;
 }
