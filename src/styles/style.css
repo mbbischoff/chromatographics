@@ -4,16 +4,7 @@
     --moonlit-ocean: #2A3B4E;
 }
 
-@keyframes rainbow {
-    0% { color: rgb(255, 105, 180); }  /* Pink */
-    12.5% { color: rgb(255, 0, 0); } /* Red */
-    25% { color: rgb(255, 142, 0); } /* Orange */
-    37.5% { color: rgb(0, 142, 0); } /* Green */
-    50% { color: rgb(0, 192, 192); } /* Cyan */
-    62.5% { color: rgb(64, 0, 152); } /* Blue */
-    75% { color: rgb(142, 0, 142); } /* Purple */
-    100% { color: rgb(255, 105, 180); } /* Back to pink */
-}
+
 
 @font-face {
     font-family: 'Lacrima Serif Regular';
@@ -55,31 +46,7 @@ body {
     font-family: 'Lacrima Serif Regular', serif;
 }
 
-header {
-    padding-block: 2rem;
-    text-align: center;
-}
 
-h1.title {
-    letter-spacing: -0.05em;
-    font-size: 2rem;
-    margin-bottom: -0.7rem;
-    font-family: 'Lacrima Serif Bold', serif;
-}
-
-h1.title a {
-    animation: rainbow 10s infinite;
-}
-
-h1.title a:hover {
-    animation-play-state: paused;
-}
-
-p.subtitle {
-    font-size: 1.3rem;
-    letter-spacing: -0.03em;
-    color: #333;
-}
 
 section.poems {
     padding: 1rem;
