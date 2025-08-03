@@ -1,0 +1,14 @@
+---
+import type { Poem } from '../data/poems';
+
+interface Props {
+  poem: Poem;
+}
+
+const { poem } = Astro.props;
+---
+
+<article class="poem" id={poem.id} style={`background-color: ${poem.backgroundColor};`}>
+  <h2 style={`color: ${poem.titleColor};`} set:html={poem.title}></h2>
+  <pre class="stanzas" style={`color: ${poem.textColor};`} set:html={poem.content}></pre>
+</article> 

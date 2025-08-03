@@ -1,0 +1,32 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <link rel="stylesheet" href="/reset.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <h1 class="title">chromatographics</h1>
+    <p class="subtitle">gay poems <em>by</em> <strong><a href="https://mbbischoff.com">mb bischoff</a></strong></p>
+  </header>
+
+  <section class="poems">
+    <slot />
+  </section>
+
+  <footer>
+    <p>◡̈</p>
+  </footer>
+</body>
+</html> 

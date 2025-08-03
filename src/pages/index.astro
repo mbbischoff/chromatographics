@@ -1,0 +1,9 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Poem from '../components/Poem.astro';
+import { poems } from '../data/poems';
+---
+
+<Layout title="chromatographics">
+  {poems.map((poem) => <Poem poem={poem} />)}
+</Layout> 
