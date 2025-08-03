@@ -4,10 +4,12 @@ import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 
 const poems = await getCollection('poems');
+// Sort poems by date in reverse chronological order (newest first)
+const sortedPoems = poems.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
 ---
 
 <Layout title="chromatographics">
-  {poems.map((poem: CollectionEntry<'poems'>) => (
+  {sortedPoems.map((poem: CollectionEntry<'poems'>) => (
     <article class="poem" id={poem.data.id} style={`background-color: ${poem.data.backgroundColor};`}>
       <a href={`/poem/${poem.id}`} class="title-link">
         <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>

@@ -8,6 +8,7 @@ const poemsCollection = defineCollection({
     titleColor: z.string(),
     backgroundColor: z.string(),
     textColor: z.string(),
+    date: z.date(),
   }),
 });
 

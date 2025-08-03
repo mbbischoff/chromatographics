@@ -4,6 +4,7 @@ title: "atlantic\n            pacific"
 titleColor: "#2A3B4E"
 backgroundColor: "#F8FAFB"
 textColor: "#040507"
+date: 2025-05-15
 ---
 
 i often wake three hours before
