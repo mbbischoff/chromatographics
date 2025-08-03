@@ -4,9 +4,8 @@ title: "accident(ily)"
 titleColor: "#B60017"
 backgroundColor: "#FFF5F6"
 textColor: "#0A0001"
-date: 2025-05-30
+date: 2025-04-30
 ---
-
 one fifty-four
 is not the hour
 to send texts,
