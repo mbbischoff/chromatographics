@@ -78,14 +78,6 @@ section.poems {
     padding: 1rem;
 }
 
-article.poem {
-    padding-block: 1rem;
-    padding-inline-start: 1rem;
-    padding-inline-end: 2rem;
-    margin-block-end: 4rem;
-    text-align: left;
-}
-
 pre {
     font-family: 'Lacrima Serif Regular', serif;
 }
@@ -93,13 +85,6 @@ pre {
 pre em {
     font-family: 'Lacrima Serif Regular Italic', serif;
 }
-
-article.poem h2 {
-    line-height: 1;
-    margin-bottom: 1rem;
-    font-family: 'Lacrima Serif Bold', serif;
-}
-
 a {
     color: var(--color-text);
     text-decoration: none;
