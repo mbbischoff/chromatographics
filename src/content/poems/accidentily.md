@@ -2,8 +2,6 @@
 id: "accidentily"
 title: "accident(ily)"
 titleColor: "#B60017"
-backgroundColor: "#FFF5F6"
-textColor: "#0A0001"
 date: 2025-04-30
 ---
 one fifty-four

@@ -2,8 +2,6 @@
 id: "atlantic-pacific"
 title: "atlantic<br>&nbsp;&nbsp;pacific"
 titleColor: "#2A3B4E"
-backgroundColor: "#F8FAFB"
-textColor: "#040507"
 date: 2025-05-15
 ---
 
