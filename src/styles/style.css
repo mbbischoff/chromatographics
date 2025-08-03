@@ -65,7 +65,14 @@ h1.title {
     font-size: 2rem;
     margin-bottom: -0.7rem;
     font-family: 'Lacrima Serif Bold', serif;
+}
+
+h1.title a {
     animation: rainbow 10s infinite;
+}
+
+h1.title a:hover {
+    animation-play-state: paused;
 }
 
 p.subtitle {
@@ -89,8 +96,10 @@ pre em {
 a {
     text-decoration: none;
     font-family: 'Lacrima Serif Bold', serif;
+    cursor: pointer;
 }
 
 a:hover {
-    cursor: grabbing;
+    cursor: pointer;
 }
+
