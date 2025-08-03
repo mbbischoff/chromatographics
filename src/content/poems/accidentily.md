@@ -28,7 +28,7 @@ as juniper slips
 from her bruised lips
 
 tripping on her tongue
-<em>fuck. uhh. drunk. umm.</em>
+*fuck. uhh. drunk. umm.*
 not that
 not yet
 

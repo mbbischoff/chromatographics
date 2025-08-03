@@ -11,7 +11,7 @@ i often wake three hours before
 your sunrise calls for a response
 logbook already soaked with ink
 we laugh, but even if we could,
-<em>why constrain our outporings?</em>
+*why constrain our outporings?*
 
 one winter day you ask for
 notes on undersea strings
