@@ -1,8 +1,6 @@
 :root {
     --color-background: white;
     --color-text: black;
-    
-    --color-candy-apple-red: #B60017;
     --moonlit-ocean: #2A3B4E;
 }
 
@@ -86,7 +84,6 @@ article.poem {
     padding-inline-end: 2rem;
     margin-block-end: 4rem;
     text-align: left;
-    
 }
 
 pre {
@@ -98,33 +95,10 @@ pre em {
 }
 
 article.poem h2 {
-    color: var(--color-candy-apple-red);
     line-height: 1;
     margin-bottom: 1rem;
     font-family: 'Lacrima Serif Bold', serif;
-
 }
-
-#accidentily {
-    background-color: #FFF5F6;
-}
-
-#accidentily .stanzas {
-    color: #0A0001;
-}
-
-#atlantic-pacific {
-    background-color: #F8FAFB;
-}
-
-#atlantic-pacific .stanzas {
-    color: #040507;
-}
-
-#atlantic-pacific h2 {
-    color: var(--moonlit-ocean);
-}
-
 
 a {
     color: var(--color-text);

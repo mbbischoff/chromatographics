@@ -1,6 +1,6 @@
 ---
 id: "atlantic-pacific"
-title: "atlantic\n            pacific"
+title: "atlantic<br>pacific"
 titleColor: "#2A3B4E"
 backgroundColor: "#F8FAFB"
 textColor: "#040507"
