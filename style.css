@@ -76,6 +76,8 @@ pre em {
 
 article.poem h2 {
     color: var(--color-candy-apple-red);
+    line-height: 1;
+    margin-bottom: 1rem;
 }
 
 #accidentily {
