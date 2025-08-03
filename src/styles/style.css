@@ -1,7 +1,7 @@
 :root {
     --color-background: white;
     --color-text: black;
-    --moonlit-ocean: #2A3B4E;
+    --color-candy-apple-red: #B60017;
 }
 
 
@@ -61,6 +61,7 @@ pre em {
 }
 
 a {
+    color: var(--color-text);
     text-decoration: none;
     font-family: 'Lacrima Serif Bold', serif;
     cursor: pointer;
