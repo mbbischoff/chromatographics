@@ -1,0 +1,47 @@
+---
+export interface Props {
+  poem: any;
+  isPermalink?: boolean;
+}
+
+const { poem, isPermalink = false } = Astro.props;
+const { Content } = await poem.render();
+---
+
+<article class="poem" id={poem.data.id} style={`background-color: ${poem.data.backgroundColor};`}>
+  {isPermalink ? (
+    <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
+  ) : (
+    <a href={`/poem/${poem.id}`} class="title-link">
+      <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
+    </a>
+  )}
+  <pre class="stanzas" style={`color: ${poem.data.textColor};`}>
+    {isPermalink ? <Content /> : poem.body}
+  </pre>
+</article>
+
+<style>
+  .poem {
+    margin-right: 4rem;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: left;
+  }
+  
+  .title-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .title-link:hover h2 {
+    text-decoration: underline;
+  }
+  
+  .stanzas {
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-family: inherit;
+  }
+</style> 
