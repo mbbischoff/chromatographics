@@ -61,6 +61,7 @@ h1.title {
 
 p.subtitle {
     font-size: 1.25rem;
+    letter-spacing: -0.03em;
     color: #333;
 }
 
@@ -111,4 +112,11 @@ article.poem h2 {
 
 #atlantic-pacific h2 {
     color: var(--moonlit-ocean);
+}
+
+
+a {
+    color: var(--color-candy-apple-red);
+    text-decoration: none;
+    font-family: 'Lacrima Serif Bold', serif;
 }
