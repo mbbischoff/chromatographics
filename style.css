@@ -21,7 +21,7 @@
 }
 
 @font-face {
-    font-family: 'Lacrima Italic Regular';
+    font-family: 'Lacrima Serif Regular Italic';
     src: url('fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
     font-weight: 400;
     font-style: italic;
@@ -39,10 +39,11 @@ body {
 
     background-color: var(--color-background);
     color: var(--color-text);
-    font-family: 'Lacrima Serif Regular', serif;
 
     margin-left: 1rem;
     margin-right: 1rem;
+
+    font-family: 'Lacrima Serif Regular', serif;
 }
 
 header {
@@ -55,6 +56,7 @@ h1.title {
     font-size: 2rem;
     margin-bottom: -0.7rem;
     font-family: 'Lacrima Serif Bold', serif;
+
 }
 
 p.subtitle {
@@ -72,6 +74,7 @@ article.poem {
     padding-inline-end: 2rem;
     margin-block-end: 4rem;
     text-align: left;
+    
 }
 
 pre {
@@ -79,13 +82,15 @@ pre {
 }
 
 pre em {
-    font-family: 'Lacrima Italic Regular', serif;
+    font-family: 'Lacrima Serif Regular Italic', serif;
 }
 
 article.poem h2 {
     color: var(--color-candy-apple-red);
     line-height: 1;
     margin-bottom: 1rem;
+    font-family: 'Lacrima Serif Bold', serif;
+
 }
 
 #accidentily {
