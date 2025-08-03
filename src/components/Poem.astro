@@ -17,7 +17,7 @@ const { Content } = await poem.render();
     </a>
   )}
   <pre class="stanzas" style={`color: ${poem.data.textColor};`}>
-    {isPermalink ? <Content /> : poem.body}
+    <Content />
   </pre>
 </article>
 
