@@ -9,11 +9,14 @@ const { Content } = await poem.render();
 ---
 
 <article class="poem" id={poem.data.id} style={`background-color: ${poem.data.backgroundColor};`}>
-  {isPermalink ? (
-    <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
-  ) : (
-    <h2 style={`color: ${poem.data.titleColor};`} set:html={`<a href="/poem/${poem.id}" class="title-link" style="color: ${poem.data.titleColor}; text-decoration: none;">${poem.data.title}</a>`}></h2>
-  )}
+  <h2 style={`color: ${poem.data.titleColor};`}>
+    {isPermalink ? (
+      <span set:html={poem.data.title}></span>
+    ) : (
+      <a href={`/poem/${poem.id}`} class="title-link" style={`color: ${poem.data.titleColor}; text-decoration: none;`} set:html={poem.data.title}>
+      </a>
+    )}
+  </h2>
   <pre class="stanzas" style={`color: ${poem.data.textColor};`}>
     <Content />
   </pre>
@@ -26,6 +29,10 @@ const { Content } = await poem.render();
     text-align: left;
     min-width: 20rem;
     margin-block-end: 4rem;
+  }
+  
+  .poem h2 {
+    line-height: 1.2;
   }
   
   .poem h2 .title-link {
