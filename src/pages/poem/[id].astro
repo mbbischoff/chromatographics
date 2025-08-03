@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const poems = await getCollection('poems');
+  return poems.map((poem: CollectionEntry<'poems'>) => ({
+    params: { id: poem.id },
+    props: { poem },
+  }));
+}
+
+const { poem }: { poem: CollectionEntry<'poems'> } = Astro.props;
+const { Content } = await poem.render();
+---
+
+<Layout title={poem.data.title}>
+  <article class="poem" id={poem.data.id} style={`background-color: ${poem.data.backgroundColor};`}>
+    <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
+    <pre class="stanzas" style={`color: ${poem.data.textColor};`}>
+      <Content />
+    </pre>
+  </article>
+</Layout> 

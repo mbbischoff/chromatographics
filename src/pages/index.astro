@@ -1,9 +1,42 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Poem from '../components/Poem.astro';
-import { poems } from '../data/poems';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+const poems = await getCollection('poems');
 ---
 
 <Layout title="chromatographics">
-  {poems.map((poem) => <Poem poem={poem} />)}
-</Layout> 
+  {poems.map((poem: CollectionEntry<'poems'>) => (
+    <article class="poem" id={poem.data.id} style={`background-color: ${poem.data.backgroundColor};`}>
+      <a href={`/poem/${poem.id}`} class="title-link">
+        <h2 style={`color: ${poem.data.titleColor};`} set:html={poem.data.title}></h2>
+      </a>
+      <pre class="stanzas" style={`color: ${poem.data.textColor};`} set:html={poem.body}></pre>
+    </article>
+  ))}
+</Layout>
+
+<style>
+  .poem {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .title-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .title-link:hover h2 {
+    text-decoration: underline;
+  }
+  
+  .stanzas {
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-family: inherit;
+  }
+</style> 
