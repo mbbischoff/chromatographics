@@ -85,7 +85,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
     {isPermalink ? (
       <span set:html={poem.data.title}></span>
     ) : (
-      <a href={`/${poem.id}`} class="title-link" style={`color: ${titleColor}; text-decoration: none;`} set:html={poem.data.title}>
+      <a href={`/${poem.slug}`} class="title-link" style={`color: ${titleColor}; text-decoration: none;`} set:html={poem.data.title}>
       </a>
     )}
   </h2>
@@ -99,7 +99,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
     padding: 2rem;
     border-radius: 8px;
     text-align: left;
-    min-width: 20rem;
+    min-width: 23rem;
     margin-block-end: 4rem;
   }
   
