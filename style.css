@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+
+@font-face {
+    font-family: 'Lacrima Serif Bold';
+    src: url('fonts/LacrimaMG-SerifBold.otf') format('opentype');
+    font-weight: 700;
+}
+
 @font-face {
     font-family: 'Lacrima Italic Regular';
     src: url('fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
@@ -44,13 +51,14 @@ header {
 }
 
 h1.title {
-    letter-spacing: -0.07em;
+    letter-spacing: -0.05em;
     font-size: 2rem;
     margin-bottom: -0.7rem;
+    font-family: 'Lacrima Serif Bold', serif;
 }
 
 p.subtitle {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
     color: #333;
 }
 
