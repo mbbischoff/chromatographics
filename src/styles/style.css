@@ -24,7 +24,6 @@
     font-family: 'Lacrima Serif Regular Italic';
     src: url('/fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
     font-weight: 400;
-    font-style: italic;
 }
 
 html {
@@ -46,7 +45,9 @@ body {
     font-family: 'Lacrima Serif Regular', serif;
 }
 
-
+em {
+    font-family: 'Lacrima Serif Regular Italic', serif;
+}
 
 section.poems {
     padding: 1rem;
