@@ -5,7 +5,7 @@ title: "“in   your<br>
  what   does<br>
  the  future<br>
  of   gender<br>
- look  like?”"
+ look  like”"
 titleColor: "#AD4D8C"
 titleColorPantone: "Purple Orchid"
 titleFont: "Lacrima Serif Bold Italic"
