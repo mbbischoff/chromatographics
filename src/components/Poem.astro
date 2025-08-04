@@ -81,11 +81,11 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
 ---
 
 <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor};`}>
-  <h2 style={`color: ${titleColor}; font-family: ${poem.data.titleFont};`}>
+  <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
     {isPermalink ? (
       <span set:html={poem.data.title}></span>
     ) : (
-      <a href={`/${poem.slug}`} class="title-link" style={`color: ${titleColor}; text-decoration: none;`} set:html={poem.data.title}>
+      <a href={`/${poem.slug}`} class="title-link" style={`color: ${titleColor}; text-decoration: none;${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`} set:html={poem.data.title}>
       </a>
     )}
   </h2>
@@ -104,8 +104,8 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   }
   
   .poem h2 {
-    line-height: 1.2;
     font-family: 'Lacrima Serif Bold', serif;
+    line-height: 1.2;
     hanging-punctuation: first;
   }
   
