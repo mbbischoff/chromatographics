@@ -11,7 +11,8 @@ color:
   name: "Purple Orchid"
   link: "https://www.pantone.com/color-finder/18-3027-tcx"
 titleFont: "Lacrima Serif Bold Italic"
-date: 2025-08-04
+written: 2022-04-15
+published: 2025-08-04
 ---
 gender      abolition
 pronoun  coronation

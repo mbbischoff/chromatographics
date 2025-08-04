@@ -5,7 +5,8 @@ color:
   hex: "#2A3B4E"
   name: "Moonlit Ocean"
   link: "https://www.pantone.com/color-finder/19-4122-tcx"
-date: 2025-05-15
+written: 2025-05-15
+published: 2025-08-01
 ---
 
 i often wake three hours before

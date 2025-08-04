@@ -5,7 +5,8 @@ color:
   hex: "#B60017"
   name: "Candy Apple Red"
   link: "https://www.pantone.com/color-finder/20-0069-TPM"
-date: 2025-04-30
+written: 2025-04-30
+published: 2025-07-31
 ---
 one fifty-four
 is not the hour

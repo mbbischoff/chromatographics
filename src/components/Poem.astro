@@ -95,11 +95,11 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
         <tbody>
           <tr>
             <td>written</td>
-            <td>{poem.data.date ? new Date(poem.data.date).toISOString().split('T')[0] : 'Unknown'}</td>
+            <td>{poem.data.written ? new Date(poem.data.written).toISOString().split('T')[0] : 'Unknown'}</td>
           </tr>
           <tr>
             <td>published</td>
-            <td>{poem.data.date ? new Date(poem.data.date).toISOString().split('T')[0] : 'Unknown'}</td>
+            <td>{poem.data.published ? new Date(poem.data.published).toISOString().split('T')[0] : 'Unknown'}</td>
           </tr>
           <tr>
             <td>colored</td>

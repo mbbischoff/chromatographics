@@ -5,8 +5,8 @@ import type { CollectionEntry } from 'astro:content';
 import Poem from '../components/Poem.astro';
 
 const poems = await getCollection('poems');
-// Sort poems by date in reverse chronological order (newest first)
-const sortedPoems = poems.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+// Sort poems by published date in reverse chronological order (newest first)
+const sortedPoems = poems.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
 ---
 
 <Layout title="chromatographics">
