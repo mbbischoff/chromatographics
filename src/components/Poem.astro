@@ -80,19 +80,27 @@ const backgroundColor = poem.data.backgroundColor || adjustLuminance(titleColor,
 const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
 ---
 
-<article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
-  <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
-    {isPermalink ? (
+{isPermalink ? (
+  <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
+    <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
       <span set:html={poem.data.title}></span>
-    ) : (
-      <a href={`/${poem.slug}`} class="title-link" style={`color: ${titleColor}; text-decoration: none;${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`} set:html={poem.data.title}>
-      </a>
-    )}
-  </h2>
-  <pre class="stanzas" style={`color: ${textColor};`}>
-    <Content />
-  </pre>
-</article>
+    </h2>
+    <pre class="stanzas" style={`color: ${textColor};`}>
+      <Content />
+    </pre>
+  </article>
+) : (
+  <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; text-decoration: none; display: block;`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a;`}>
+      <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+        <span set:html={poem.data.title}></span>
+      </h2>
+      <pre class="stanzas" style={`color: ${textColor};`}>
+        <Content />
+      </pre>
+    </article>
+  </a>
+)}
 
 <style>
   .poem {
@@ -101,12 +109,28 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
     width: 22rem;
     padding: 1.5rem;
     margin-block-end: 2rem;
+    transition: box-shadow 0.2s ease-in-out;
   }
   
   .poem h2 {
     font-family: 'Lacrima Serif Bold', serif;
     line-height: 1.2;
     hanging-punctuation: first;
+  }
+  
+  .poem-link {
+    display: block;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .poem-link:hover {
+    transform: translateY(-0.2rem);
+  }
+  
+  .poem-link:hover .poem {
+    box-shadow: 0 0.2rem 0.8rem var(--shadow-color);
+    border-radius: 2rem;
   }
   
   .poem h2 .title-link {
