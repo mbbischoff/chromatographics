@@ -95,17 +95,30 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
         <tbody>
           <tr>
             <td>wrote</td>
-            <td>{poem.data.written ? new Date(poem.data.written).toISOString().split('T')[0] : 'Unknown'}</td>
+            <td>
+              {poem.data.written ? (
+                <time datetime={new Date(poem.data.written).toISOString()}>
+                  {new Date(poem.data.written).toISOString().split('T')[0]}
+                </time>
+              ) : 'Unknown'}
+            </td>
           </tr>
           <tr>
             <td>posted</td>
-            <td>{poem.data.published ? new Date(poem.data.published).toISOString().split('T')[0] : 'Unknown'}</td>
+            <td>
+              {poem.data.published ? (
+                <time datetime={new Date(poem.data.published).toISOString()}>
+                  {new Date(poem.data.published).toISOString().split('T')[0]}
+                </time>
+              ) : 'Unknown'}
+            </td>
           </tr>
           <tr>
             <td>colored</td>
             <td>
               {poem.data.color ? (
-                <a href={poem.data.color.link || `https://www.pantone.com/color-finder/${poem.data.color.name.replace(/\s+/g, '-').toLowerCase()}`} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color.hex}; text-decoration: none;`}>
+                <a href={poem.data.color.link || `https://www.pantone.com/color-finder/${poem.data.color.name.replace(/\s+/g, '-').toLowerCase()}`} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color.hex}; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;`}>
+                  <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
                   {poem.data.color.name}
                 </a>
               ) : 'Unknown'}
