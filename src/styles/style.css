@@ -78,3 +78,6 @@ a:hover {
     cursor: pointer;
 }
 
+.first-name {
+    letter-spacing: -0.15em;
+  }
