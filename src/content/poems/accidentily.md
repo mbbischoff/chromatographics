@@ -1,8 +1,10 @@
 ---
 id: "accidentily"
 title: "accident(ily)"
-titleColor: "#B60017"
-titleColorPantone: "Candy Apple Red"
+color:
+  hex: "#B60017"
+  name: "Candy Apple Red"
+  link: "https://www.pantone.com/color-finder/20-0069-TPM"
 date: 2025-04-30
 ---
 one fifty-four

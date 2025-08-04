@@ -81,14 +81,40 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
 ---
 
 {isPermalink ? (
-  <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
-    <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
-      <span set:html={poem.data.title}></span>
-    </h2>
-    <pre class="stanzas" style={`color: ${textColor};`}>
-      <Content />
-    </pre>
-  </article>
+  <>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
+      <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+        <span set:html={poem.data.title}></span>
+      </h2>
+      <pre class="stanzas" style={`color: ${textColor};`}>
+        <Content />
+      </pre>
+    </article>
+    <div class="metadata-table" style={`color: ${textColor};`}>
+      <table>
+        <tbody>
+          <tr>
+            <td>written</td>
+            <td>{poem.data.date ? new Date(poem.data.date).toISOString().split('T')[0] : 'Unknown'}</td>
+          </tr>
+          <tr>
+            <td>published</td>
+            <td>{poem.data.date ? new Date(poem.data.date).toISOString().split('T')[0] : 'Unknown'}</td>
+          </tr>
+          <tr>
+            <td>colored</td>
+            <td>
+              {poem.data.color ? (
+                <a href={poem.data.color.link || `https://www.pantone.com/color-finder/${poem.data.color.name.replace(/\s+/g, '-').toLowerCase()}`} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color.hex}; text-decoration: none;`}>
+                  {poem.data.color.name}
+                </a>
+              ) : 'Unknown'}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </>
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; text-decoration: none; display: block;`}>
     <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a;`}>
@@ -136,5 +162,33 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   .poem h2 .title-link {
     display: block;
     text-decoration: none;
+  }
+  
+  .metadata-table {
+    padding-block-end: 2rem;
+    width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .metadata-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8rem;
+  }
+  
+  .metadata-table td {
+    padding: 0.25rem 0;
+    vertical-align: top;
+  }
+  
+  .metadata-table td:first-child {
+    font-weight: bold;
+    width: 40%;
+    padding-right: 1rem;
+  }
+  
+  .metadata-table td:last-child {
+    width: 60%;
   }
 </style> 

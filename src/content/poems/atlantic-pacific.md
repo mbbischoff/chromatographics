@@ -1,8 +1,10 @@
 ---
 id: "atlantic-pacific"
 title: "atlantic<br>&nbsp;&nbsp;pacific"
-titleColor: "#2A3B4E"
-titleColorPantone: "Moonlit Ocean"
+color:
+  hex: "#2A3B4E"
+  name: "Moonlit Ocean"
+  link: "https://www.pantone.com/color-finder/19-4122-tcx"
 date: 2025-05-15
 ---
 

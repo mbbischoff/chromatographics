@@ -1,8 +1,10 @@
 ---
 id: "bioavailable"
 title: "bioavailable"
-titleColor: "#58C9D4"
-titleColorPantone: "Blue Radiance"
+color:
+  hex: "#58C9D4"
+  name: "Blue Radiance"
+  link: "https://www.pantone.com/color-finder/14-4816-tcx"
 date: 2025-07-20
 ---
 

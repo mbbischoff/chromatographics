@@ -1,13 +1,15 @@
 ---
-id: "ideal world"
+id: "ideal-world"
 title: "“in   your<br>
  ideal world,<br>
  what   does<br>
  the  future<br>
  of   gender<br>
  look  like”"
-titleColor: "#AD4D8C"
-titleColorPantone: "Purple Orchid"
+color:
+  hex: "#AD4D8C"
+  name: "Purple Orchid"
+  link: "https://www.pantone.com/color-finder/18-3027-tcx"
 titleFont: "Lacrima Serif Bold Italic"
 date: 2025-08-04
 ---
