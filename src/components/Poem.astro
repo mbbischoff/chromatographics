@@ -75,7 +75,7 @@ function adjustLuminance(hexColor: string, luminance: number): string {
 }
 
 // Calculate default colors based on title color
-const titleColor = poem.data.titleColor || '#000000';
+const titleColor = poem.data.color?.hex || '#000000';
 const backgroundColor = poem.data.backgroundColor || adjustLuminance(titleColor, 0.98);
 const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
 ---
