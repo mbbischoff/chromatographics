@@ -2,6 +2,7 @@
 id: "accidentily"
 title: "accident(ily)"
 titleColor: "#B60017"
+titleColorPantone: "Candy Apple Red"
 date: 2025-04-30
 ---
 one fifty-four

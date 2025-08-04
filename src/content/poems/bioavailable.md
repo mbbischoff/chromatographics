@@ -2,6 +2,7 @@
 id: "bioavailable"
 title: "bioavailable"
 titleColor: "#58C9D4"
+titleColorPantone: "Blue Radiance"
 date: 2025-07-20
 ---
 

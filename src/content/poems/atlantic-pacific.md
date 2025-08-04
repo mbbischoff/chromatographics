@@ -2,6 +2,7 @@
 id: "atlantic-pacific"
 title: "atlantic<br>&nbsp;&nbsp;pacific"
 titleColor: "#2A3B4E"
+titleColorPantone: "Moonlit Ocean"
 date: 2025-05-15
 ---
 
@@ -33,4 +34,4 @@ true, land divides us more than sea,
 but these two coasts call to us both
 maybe it's the sirens or the sounds 
 of wavecrash against the shore —
-the dangers of unfathomed depths 
+the dangers of unfathomed depths
