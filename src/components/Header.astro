@@ -4,7 +4,7 @@ import { siteConfig } from '../data/site';
 
 <header class="masthead">
   <h1 class="title"><a href="/">{siteConfig.title}</a></h1>
-  <p class="subtitle">gay poems by <strong><a href={siteConfig.author.url}>{siteConfig.author.name}</a></strong></p>
+  <p class="subtitle">gay poems by <strong><a href={siteConfig.author.url}><span class="first-name">{siteConfig.author.firstName}</span> {siteConfig.author.lastName}</a></strong></p>
 </header>
 
 <style>
@@ -28,22 +28,47 @@ import { siteConfig } from '../data/site';
     animation-play-state: paused;
   }
 
-  p.subtitle {
+  p.subtitle, p.subtitle a {
     font-size: 1.4rem;
     letter-spacing: -0.06em;
     color: #444;
   }
 
-  /* TODO: pick better colors */
+  p.subtitle a {
+    transition: color 0.2s ease;
+  }
+
+  p.subtitle a:hover {
+    color: #B60017;
+  }
+
+  p.subtitle a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #B60017;
+    transition: width 0.3s ease;
+  }
+
+  p.subtitle a:hover::after {
+    width: 100%;
+  }
+
+  .first-name {
+    letter-spacing: -0.15em;
+  }
+
   @keyframes rainbow {
-    0% { color: #ff69b4; }  /* Pink */
-    12.5% { color: #ff0000; } /* Red */
-    25% { color: #ff8e00; } /* Orange */
-    37.5% { color: #fedb00; } /* Yellow */
-    50% { color: #008e00; } /* Green */
-    62.5% { color: #00c0c0; } /* Cyan */
-    75% { color: #400098; } /* Blue */
-    87.5% { color: #8e008e; } /* Purple */
-    100% { color: #ff69b4; } /* Back to pink */
+    0% { color: #B60017; }  /* Candy Apple Red */
+    14.285% { color: #ff8e00; } /* Orange */
+    28.57% { color: #fedb00; } /* 108C */
+    42.855% { color: #008e00; } /* Green */
+    57.14% { color: #00c0c0; } /* Cyan */
+    71.425% { color: #400098; } /* Blue */
+    85.71% { color: #440099; } /* Violet C */
+    100% { color: #B60017; } /* Candy Apple Red */
   }
 </style> 
