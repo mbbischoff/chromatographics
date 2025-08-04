@@ -80,7 +80,7 @@ const backgroundColor = poem.data.backgroundColor || adjustLuminance(titleColor,
 const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
 ---
 
-<article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor};`}>
+<article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
   <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
     {isPermalink ? (
       <span set:html={poem.data.title}></span>
