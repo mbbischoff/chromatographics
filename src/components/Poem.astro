@@ -92,6 +92,17 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
       <table>
         <tbody>
           <tr>
+            <td>color</td>
+            <td>
+              {poem.data.color ? (
+                <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color.hex}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
+                  <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
+                  {poem.data.color.name}
+                </a>
+              ) : 'Unknown'}
+            </td>
+          </tr>
+          <tr>
             <td>wrote</td>
             <td>
               {poem.data.written ? (
@@ -111,25 +122,14 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
               ) : 'Unknown'}
             </td>
           </tr>
-          <tr>
-            <td>colored</td>
-            <td>
-              {poem.data.color ? (
-                <a href={poem.data.color.link || `https://www.pantone.com/color-finder/${poem.data.color.name.replace(/\s+/g, '-').toLowerCase()}`} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color.hex}; text-decoration: none; display: flex; align-items: center; gap: 0.5rem;`}>
-                  <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
-                  {poem.data.color.name}
-                </a>
-              ) : 'Unknown'}
-            </td>
-          </tr>
           {poem.data.publications && poem.data.publications.length > 0 && (
             <tr>
-              <td>also in</td>
+              <td>published</td>
               <td>
                 <ul style="margin: 0; padding: 0; list-style: none;">
                   {poem.data.publications.map((publication: any) => (
                     <li style="margin-bottom: 0.5rem;">
-                      <a href={publication.link} target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                      <a href={publication.link} target="_blank" rel="noopener noreferrer">
                         {publication.title}
                       </a>
                       <br />
@@ -147,7 +147,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
     </div>
   </>
 ) : (
-  <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; text-decoration: none; display: block;`}>
+  <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
     <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a;`}>
       <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
@@ -182,6 +182,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   
   .poem-link:hover {
     transform: translateY(-0.2rem);
+    box-shadow: none;
   }
   
   .poem-link:hover .poem {

@@ -73,10 +73,13 @@ a {
     text-decoration: none;
     font-family: 'Lacrima Serif Bold', serif;
     cursor: pointer;
+    transition: box-shadow 0.2s;
 }
 
 a:hover {
     cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0.5px 0;
 }
 
 .first-name {
