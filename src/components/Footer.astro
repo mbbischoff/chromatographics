@@ -4,13 +4,14 @@ import { siteConfig } from '../data/site';
 
 <footer>
   <p class="links">
+    <a class="rss" href="/rss.xml">rss</a>
     <a class="bluesky" href="https://bsky.app/profile/chromato.graphics/">bluesky</a>
     <a class="mastodon" href="https://mastodon.social/@chromatographics">mastodon</a>
     <a class="instagram" href="https://instagram.com/chromatographics/">ig</a>
     <a class="threads" href="https://threads.net/@chromatographics">threads</a>
     <a class="x" href="https://x.com/chromatographix/">x</a>
   </p>
-  <p class="copyright">&copy; {new Date().getFullYear()} <a href="https://creativecommons.org/licenses/by-nc/4.0/">creative commons by-nc</a></p>
+  <p class="copyright">&copy; {new Date().getFullYear()} <a href="https://creativecommons.org/licenses/by-nc/4.0/">creative commons mb bischoff</a></p>
   <p class="smile">◡̈</p>
 </footer> 
 
@@ -28,6 +29,10 @@ import { siteConfig } from '../data/site';
 
   .smile {
     font-size: 1.2rem;
+  }
+
+  footer a.rss {
+    color: #EB7817;
   }
 
   footer a.bluesky {
