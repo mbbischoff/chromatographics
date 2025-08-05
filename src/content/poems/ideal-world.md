@@ -13,6 +13,10 @@ color:
 titleFont: "Lacrima Serif Bold Italic"
 written: 2022-04-15
 published: 2025-08-04
+publications:
+  - title: "beestung #12"
+    link: "https://beestungmag.com/issue12/in-your-ideal-world-what-does-the-future-of-gender-look-like-and-t4t-by-matthew-bischoff/"
+    date: 2020-08-20
 ---
 gender      abolition
 pronoun  coronation
