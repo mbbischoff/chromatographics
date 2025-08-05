@@ -28,7 +28,7 @@ swallowed by the brassy cone
 our voices sound better inside
 
 when you open your ears again
-there's so much weather to hear :
+there's so much weather to hear :
 wind and rain and quiet calm that
 lasts too long and means too much
 we keep sailing even without a map
