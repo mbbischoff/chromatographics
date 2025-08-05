@@ -7,6 +7,10 @@ export interface Props {
 const { poem, isPermalink = false } = Astro.props;
 const { Content } = await poem.render();
 
+// Get the raw content and trim trailing whitespace
+const rawContent = await poem.body;
+const trimmedContent = rawContent.trim();
+
 // Utility function to adjust color luminance
 function adjustLuminance(hexColor: string, luminance: number): string {
   // Convert hex to RGB
@@ -86,9 +90,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
       <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
-      <pre class="stanzas" style={`color: ${textColor};`}>
-        <Content />
-      </pre>
+      <pre class="stanzas" style={`color: ${textColor};`}>{trimmedContent}</pre>
     </article>
     <div class="metadata-table" style={`color: ${textColor};`}>
       <table>
@@ -134,9 +136,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
       <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
-      <pre class="stanzas" style={`color: ${textColor};`}>
-        <Content />
-      </pre>
+      <pre class="stanzas" style={`color: ${textColor};`}>{trimmedContent}</pre>
     </article>
   </a>
 )}
@@ -155,6 +155,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
     font-family: 'Lacrima Serif Bold', serif;
     line-height: 1.2;
     hanging-punctuation: first;
+    margin-block-end: 1rem;
   }
   
   .poem-link {
