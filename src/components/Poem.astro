@@ -122,6 +122,26 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
               ) : 'Unknown'}
             </td>
           </tr>
+          {poem.data.publications && poem.data.publications.length > 0 && (
+            <tr>
+              <td>also in</td>
+              <td>
+                <ul style="margin: 0; padding: 0; list-style: none;">
+                  {poem.data.publications.map((publication: any) => (
+                    <li style="margin-bottom: 0.5rem;">
+                      <a href={publication.link} target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">
+                        {publication.title}
+                      </a>
+                      <br />
+                      <time datetime={new Date(publication.date).toISOString()} style="font-size: 0.875rem; opacity: 0.8;">
+                        {new Date(publication.date).toISOString().split('T')[0]}
+                      </time>
+                    </li>
+                  ))}
+                </ul>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
@@ -193,5 +213,6 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   
   .metadata-table td:first-child {
     font-family: 'Lacrima Serif Bold', serif;
+    padding-right: 1rem;
   }
 </style> 

@@ -6,6 +6,12 @@ const ColorSchema = z.object({
   link: z.string().optional(),
 });
 
+const PublicationSchema = z.object({
+  title: z.string(),
+  link: z.string(),
+  date: z.date(),
+});
+
 const poemsCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -17,6 +23,7 @@ const poemsCollection = defineCollection({
     textColor: z.string().optional(),
     written: z.date(),
     published: z.date(),
+    publications: z.array(PublicationSchema).optional(),
   }),
 });
 
