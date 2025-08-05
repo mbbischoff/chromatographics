@@ -20,6 +20,6 @@ export async function GET(context: any) {
       link: `/poem/${poem.data.id}/`,
     })),
     customData: `<language>en-us</language>
-    <atom:link href="${context.site}rss.xml" rel="self" type="application/rss+xml" />`,
+    <link href="${context.site}rss.xml" rel="self" type="application/rss+xml" />`,
   });
 } 
