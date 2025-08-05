@@ -15,9 +15,11 @@ export async function GET(context: any) {
     items: poems.map((poem) => ({
       title: poem.data.title,
       pubDate: poem.data.published,
+      description: `<pre>${sanitizeHtml(parser.render(poem.body))}</pre>`,
       content: `<pre>${sanitizeHtml(parser.render(poem.body))}</pre>`,
       link: `/poem/${poem.data.id}/`,
     })),
-    customData: `<language>en-us</language>`,
+    customData: `<language>en-us</language>
+    <atom:link href="${context.site}rss.xml" rel="self" type="application/rss+xml" />`,
   });
 } 
