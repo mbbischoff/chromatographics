@@ -15,7 +15,7 @@ export async function GET(context: any) {
     items: poems.map((poem) => ({
       title: poem.data.title,
       pubDate: poem.data.published,
-      content: sanitizeHtml(parser.render(poem.body)),
+      content: `<pre>${sanitizeHtml(parser.render(poem.body))}</pre>`,
       link: `/poem/${poem.data.id}/`,
     })),
     customData: `<language>en-us</language>`,
