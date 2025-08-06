@@ -19,6 +19,6 @@ export async function GET(context: any) {
       content: `<pre>${sanitizeHtml(parser.render(poem.body))}</pre>`,
       link: `/poem/${poem.data.id}/`,
     })),
-    customData: `<language>en-us</language>
+    customData: `<language>en-us</language>`,
   });
 } 
