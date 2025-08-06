@@ -36,29 +36,6 @@ import { siteConfig } from '../data/site';
     color: #444;
   }
 
-  p.subtitle a {
-    transition: color 0.2s ease;
-  }
-
-  p.subtitle a:hover {
-    color: #B60017;
-  }
-
-  p.subtitle a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -2px;
-    left: 0;
-    background-color: #B60017;
-    transition: width 0.3s ease;
-  }
-
-  p.subtitle a:hover::after {
-    width: 100%;
-  }
-  
   @keyframes rainbow {
     0% { color: #B60017; }  /* Candy Apple Red */
     14.285% { color: #ff8e00; } /* Orange */
