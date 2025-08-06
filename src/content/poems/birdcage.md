@@ -14,7 +14,7 @@ which strikes me odd,
 the way your eyes do
 
 we board & take flight
-to the control room, <strong>42</strong>
+to the control room, 42
 teacups on brass hooks
 carefully cluttered views
 
@@ -37,9 +37,9 @@ the next time i step into
 your cage you kiss my
 eyes closed and pull a
 lever
-            that
-                      stops
-                                  time
+      that
+            stops
+                  time
 
 we’re suspended—trapped
 in moments of wrought iron
