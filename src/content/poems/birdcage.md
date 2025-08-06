@@ -48,5 +48,5 @@ and each other’s full frames
 
 for as long
 as we are,
-<em>we get to
-be happy</em>
+_we get to
+be happy_
