@@ -1,10 +1,10 @@
 ---
 id: "ideal-world"
-title: "“in   your<br>
- ideal world,<br>
- what   does<br>
- the  future<br>
- of   gender<br>
+title: "“in   your\n
+ ideal world,\n
+ what   does\n
+ the  future\n
+ of   gender\n
  look  like”"
 color:
   hex: "#AD4D8C"
