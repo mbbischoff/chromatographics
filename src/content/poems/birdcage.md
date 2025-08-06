@@ -5,7 +5,7 @@ color:
   hex: "#46647E"
   name: "Velvet Morning"
   link: "https://www.pantone.com/color-finder/18-3927-TCX"
-written: 2022-07-19
+written: 2025-07-19
 published: 2025-08-06
 ---
 you ask me if i’m okay
