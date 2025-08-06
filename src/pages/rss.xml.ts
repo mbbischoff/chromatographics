@@ -20,7 +20,5 @@ export async function GET(context: any) {
       link: `/poem/${poem.data.id}/`,
     })),
     customData: `<language>en-us</language>
-    <feed xmlns="http://www.w3.org/2005/Atom">
-    <atom:link href="https://chromato.graphics/rss.xml" rel="self" type="application/rss+xml" />`,
   });
 } 
