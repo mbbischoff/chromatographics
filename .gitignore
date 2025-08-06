@@ -1,9 +1,6 @@
 # build output
 dist/
 
-# Local fonts
-fonts/
-
 # cache files
 .eslintcache
 
