@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getEntry } from 'astro:content';
+
+const aboutEntry = await getEntry('pages', 'about');
+const { Content } = await aboutEntry.render();
+---
+
+<Layout title={aboutEntry.data.title}>
+  <section class="about-content">
+    <Content />
+    <p class="about-content-test">Test</p>
+  </section>
+</Layout>
+
+<style>
+  .about-content {
+    width: 22rem;
+    margin: 0 auto;
+    padding: 1rem;
+    
+  }
+  
+  .about-content p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-content p:last-child {
+    margin-bottom: 0;
+  }
+  .about-content-test {
+    margin-top: 2rem;
+  }
+</style> 

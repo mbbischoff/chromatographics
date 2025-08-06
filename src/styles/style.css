@@ -51,6 +51,10 @@ body {
     font-family: 'Lacrima Serif Regular', serif;
 }
 
+h1 {
+    font-family: 'Lacrima Serif Bold', serif;
+}
+
 em {
     font-family: 'Lacrima Serif Regular Italic', serif;
 }
