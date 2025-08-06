@@ -13,7 +13,7 @@ export async function GET(context: any) {
     description: 'gay poems by mb bischoff',
     site: context.site,
     items: poems.map((poem) => ({
-      title: poem.data.title,
+      title: sanitizeHtml(poem.data.title, {allowedTags: []}),
       pubDate: poem.data.published,
       description: `<pre>${sanitizeHtml(parser.render(poem.body))}</pre>`,
       content: `<pre>${sanitizeHtml(parser.render(poem.body))}</pre>`,
