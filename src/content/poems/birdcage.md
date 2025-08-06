@@ -9,7 +9,7 @@ written: 2022-07-19
 published: 2025-08-06
 ---
 you ask me if i’m okay
-–––– with elevators?
+⸻ with elevators?
 which strikes me odd,
 the way your eyes do
 
@@ -37,16 +37,16 @@ the next time i step into
 your cage you kiss my
 eyes closed and pull a
 lever
-     that
-            stops
-                  time
+          that
+                              **stops**
+                             time
 
-we’re suspended—trapped
+we’re suspended⸺ trapped
 in moments of wrought iron
 pressed against their grates
 and each other’s full frames
 
-for as long
-as we are,
-_we get to
-be happy_
+             for as long
+             as we are,
+             we get to
+             be happy
