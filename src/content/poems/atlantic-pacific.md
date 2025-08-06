@@ -1,6 +1,6 @@
 ---
 id: "atlantic-pacific"
-title: "atlantic\n  pacific"
+title: "atlantic<br>  pacific"
 color:
   hex: "#2A3B4E"
   name: "Moonlit Ocean"
