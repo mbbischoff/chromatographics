@@ -9,7 +9,7 @@ written: 2022-07-19
 published: 2025-08-06
 ---
 you ask me if i’m okay
-–––– with elevators?
+–––– with elevators?
 which strikes me odd,
 the way your eyes do
 
