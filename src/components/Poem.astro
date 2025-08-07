@@ -102,6 +102,16 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
               ) : 'Unknown'}
             </td>
           </tr>
+          {poem.data.felt && (
+            <tr>
+              <td>felt</td>
+              <td>
+                <time datetime={new Date(poem.data.felt).toISOString()}>
+                  {new Date(poem.data.felt).toISOString().split('T')[0]}
+                </time>
+              </td>
+            </tr>
+          )}
           <tr>
             <td>wrote</td>
             <td>
