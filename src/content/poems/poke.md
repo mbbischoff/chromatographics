@@ -6,7 +6,7 @@ color:
   name: "Inkling"
   link: "https://www.pantone.com/color-finder/19-3811-TCX"
 felt: 2025-06-13
-written: 2022-06-22
+written: 2025-06-22
 published: 2025-08-07
 ---
 door opens— am i the fool?
