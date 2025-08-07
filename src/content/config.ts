@@ -21,6 +21,7 @@ const poemsCollection = defineCollection({
     titleFont: z.string().optional(),
     backgroundColor: z.string().optional(),
     textColor: z.string().optional(),
+    felt: z.date().optional(),
     written: z.date(),
     published: z.date(),
     publications: z.array(PublicationSchema).optional(),

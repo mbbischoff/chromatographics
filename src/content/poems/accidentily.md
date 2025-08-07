@@ -6,6 +6,7 @@ color:
   name: "Candy Apple Red"
   link: "https://www.pantone.com/color-finder/20-0069-TPM"
 written: 2025-04-30
+felt: 2025-04-27
 published: 2025-07-31
 publications:
   - title: "Poetry is Gay #2"
