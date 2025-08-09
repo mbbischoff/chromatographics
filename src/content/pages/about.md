@@ -5,7 +5,7 @@ description: "About chromatographics and mb bischoff"
 
 ## about
 
-> **chromatography** is a laboratory technique for the separation of a mixture into its components.
+> [**chromatography**](https://en.wikipedia.org/wiki/Chromatography) is a laboratory technique for the separation of a mixture into its components.
 
 **chromatogprahics** are gay poems.  
 they attempt to do the same thing.
