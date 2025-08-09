@@ -5,4 +5,11 @@ description: "About chromatographics and mb bischoff"
 
 ## about
 
-to come.
+> **chromatography** is a laboratory technique for the separation of a mixture into its components.
+
+**chromatogprahics** are gay poems.  
+they attempt the exact same thing.
+
+![mb bischoff. a white trans woman in a red dress on a roof](/images/mb.webp)
+
+**<span class="first-name">mb</span> bischoff** (a.k.a. chroma) writes programs & poems in brooklyn. she’s soft.

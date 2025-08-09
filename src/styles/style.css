@@ -71,7 +71,7 @@ pre em {
 }
 
 a {
-    color: var(--color-text);
+    color: var(--color-candy-apple-red);
     text-decoration: none;
     cursor: pointer;
     transition: box-shadow 0.2s;
@@ -94,4 +94,21 @@ a:hover {
 
 p:not(pre p) {
   margin-bottom: 1rem;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 1px solid var(--color-candy-apple-red);
+    padding-left: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    margin-block: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-block: 1rem;
+    border-radius: 2rem;
+    border: 1px solid var(--color-candy-apple-red);
 }
