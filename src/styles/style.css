@@ -34,6 +34,12 @@ html {
     font-size: 16px;
 }
 
+@media screen and (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
 body {
     display: flex;
     flex-direction: column;
