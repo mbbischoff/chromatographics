@@ -86,7 +86,11 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
       <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
-      <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
+      {poem.data.preformatted ? (
+        <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
+      ) : (
+        <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
+      )}
     </article>
     <div class="metadata-table" style={`color: ${textColor};`}>
       <table>
@@ -162,7 +166,11 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
       <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
-      <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
+      {poem.data.preformatted ? (
+        <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
+      ) : (
+        <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
+      )}
     </article>
   </a>
 )}

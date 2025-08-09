@@ -73,9 +73,13 @@ pre em {
 a {
     color: var(--color-text);
     text-decoration: none;
-    font-family: 'Lacrima Serif Bold', serif;
     cursor: pointer;
     transition: box-shadow 0.2s;
+}
+
+/* Only apply bold font to specific types of links, not poem content links */
+a:not(.poem-link) {
+    font-family: 'Lacrima Serif Bold', serif;
 }
 
 a:hover {
@@ -87,3 +91,7 @@ a:hover {
 .first-name {
     letter-spacing: -0.15em;
   }
+
+p:not(pre p) {
+  margin-bottom: 1rem;
+}
