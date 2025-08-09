@@ -12,4 +12,4 @@ they attempt to do the same thing.
 
 ![mb bischoff. a white trans woman in a red dress on a roof](/images/mb.webp)
 
-**<span class="first-name">mb</span> bischoff** (a.k.a. chroma) writes programs & poems in brooklyn. she’s soft.
+**[<span class="first-name">mb</span> bischoff**](https://mbbischoff.com) (a.k.a. chroma) writes programs & poems in brooklyn. she’s soft.
