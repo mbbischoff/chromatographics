@@ -12,6 +12,7 @@
     src: url('/fonts/LacrimaMG-SerifRegular.otf') format('opentype');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 
@@ -19,18 +20,21 @@
     font-family: 'Lacrima Serif Bold';
     src: url('/fonts/LacrimaMG-SerifBold.otf') format('opentype');
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Lacrima Serif Regular Italic';
     src: url('/fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
     font-weight: 400;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'Lacrima Serif Bold Italic';
     src: url('/fonts/LacrimaMG-ItalicBold.otf') format('opentype');
     font-weight: 700;
+    font-display: swap;
 }
 
 html {
