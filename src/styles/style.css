@@ -136,7 +136,7 @@ figure:has(img[src="/images/mb.webp"]) {
 }
 
 figure {
-    margin: 1rem -1rem;
+    margin: 1rem -0.5rem;
 }
 
 figcaption {
