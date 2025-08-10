@@ -14,12 +14,13 @@ const { Content } = await poem.render();
 const titleColor = poem.data.color?.hex || '#000000';
 const backgroundColor = poem.data.backgroundColor || adjustLuminance(titleColor, 0.98);
 const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
+const darkModeTextColor = adjustLuminance(titleColor, 0.7);
 ---
 
 {isPermalink ? (
   <>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
-      <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`}>
+      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
@@ -98,8 +99,8 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   </>
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a;`}>
-      <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`}>
+      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
@@ -177,5 +178,20 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   
   .metadata-table {
     color: var(--color-text);
+  }
+
+  /* Dark mode specific styling for poems */
+  @media (prefers-color-scheme: dark) {
+    .poem {
+      background-color: color-mix(in srgb, var(--poem-title-color, #000000) 10%, transparent) !important;
+    }
+    
+     .poem .stanzas {
+      color: var(--poem-dark-text-color, #000000) !important;
+    }
+
+    .poem-title {
+      color: var(--poem-dark-text-color, #000000) !important;
+    }
   }
 </style> 
