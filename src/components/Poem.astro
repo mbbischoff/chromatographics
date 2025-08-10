@@ -78,28 +78,21 @@ function adjustLuminance(hexColor: string, luminance: number): string {
 const titleColor = poem.data.color?.hex || '#000000';
 const backgroundColor = poem.data.backgroundColor || adjustLuminance(titleColor, 0.98);
 const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
-
-// Add CSS variables for dark mode support
-const cssVars = `
-  --poem-title-color: ${titleColor};
-  --poem-background: ${backgroundColor};
-  --poem-text-color: ${textColor};
-`;
 ---
 
 {isPermalink ? (
   <>
-    <article class="poem" id={poem.data.id} style={`${cssVars} background-color: var(--poem-background); border: 1px solid var(--poem-title-color)20;`}>
-      <h2 style={`color: var(--poem-title-color);${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20;`}>
+      <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: var(--poem-text-color);`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: var(--poem-text-color);`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
       )}
     </article>
-    <div class="metadata-table">
+    <div class="metadata-table" style={`color: ${textColor};`}>
       <table>
         <tbody>
           <tr>
@@ -169,14 +162,14 @@ const cssVars = `
   </>
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
-    <article class="poem" id={poem.data.id} style={`${cssVars} background-color: var(--poem-background); border: 1px solid var(--poem-title-color)20; --shadow-color: var(--poem-title-color)1a;`}>
-      <h2 style={`color: var(--poem-title-color);${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a;`}>
+      <h2 style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: var(--poem-text-color);`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: var(--poem-text-color);`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
       )}
     </article>
   </a>
@@ -224,7 +217,6 @@ const cssVars = `
     padding-block-end: 2rem;
     margin-left: auto;
     margin-right: auto;
-    color: var(--color-text);
   }
   
   .metadata-table table {
@@ -246,6 +238,4 @@ const cssVars = `
   .metadata-table a {
     color: inherit;
   }
-
-
 </style> 
