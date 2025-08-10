@@ -134,7 +134,6 @@ img {
     max-width: 100%;
     height: auto;
     margin-top: 1rem;
-    border-radius: 2rem;
     border: 2px solid var(--color-border-light);
     box-shadow: var(--shadow-subtle);
 }
