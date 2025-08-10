@@ -13,7 +13,7 @@ they attempt to do the same thing.
 <br>
 
 <figure>
-  <a href="https://www.instagram.com/p/DNGzHe7vYZh/"><img src="/images/mb.webp" alt="mb bischoff. a white trans woman in a red dress on a roof"></a>
+  <a href="https://www.instagram.com/p/DNGzHe7vYZh/"><img src="/images/mb.webp" alt="mb bischoff. a white trans woman in a red dress on a roof" loading="lazy"></a>
   <figcaption>photo by <a href="https://www.instagram.com/ashtray_angels/">jäger</a></figcaption>
 </figure>
 
