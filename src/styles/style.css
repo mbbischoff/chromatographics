@@ -4,6 +4,7 @@
     --color-text-light: #666;
     --color-border-light: #eee;
     --color-candy-apple-red: #B60017;
+    --shadow-subtle: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
 }
 
 @font-face {
@@ -66,7 +67,7 @@ em {
 }
 
 section.poems {
-    padding: 1rem;
+    padding-inline: 1rem;
 }
 
 pre {
@@ -119,7 +120,7 @@ img {
     margin-top: 1rem;
     border-radius: 2rem;
     border: 2px solid var(--color-border-light);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-subtle);
 }
 
 a img {
