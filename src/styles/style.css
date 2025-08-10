@@ -7,6 +7,18 @@
     --shadow-subtle: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
 }
 
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-background: #111;
+        --color-text: #f0f0f0;
+        --color-text-light: #b0b0b0;
+        --color-border-light: #333;
+        --color-candy-apple-red: #FF334D;
+        --shadow-subtle: 0 0.2rem 0.8rem rgba(255, 255, 255, 0.1);
+    }
+}
+
 @font-face {
     font-family: 'Lacrima Serif Regular';
     src: url('/fonts/LacrimaMG-SerifRegular.otf') format('opentype');
