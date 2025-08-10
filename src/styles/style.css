@@ -10,7 +10,7 @@
 /* System dark mode preference */
 @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
-        --color-background: #111;
+        --color-background: #222;
         --color-text: #eee;
         --color-text-light: #ccc;
         --color-border-light: #333;
