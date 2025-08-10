@@ -28,7 +28,7 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
         <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
       )}
     </article>
-    <div class="metadata-table" style={`color: ${textColor};`}>
+    <div class="metadata-table">
       <table>
         <tbody>
           <tr>
@@ -172,6 +172,10 @@ const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
   }
 
   .metadata-table a {
-    color: inherit;
+    color: var(--color-candy-apple-red);
+  }
+  
+  .metadata-table {
+    color: var(--color-text);
   }
 </style> 
