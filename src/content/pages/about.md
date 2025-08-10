@@ -14,7 +14,7 @@ they attempt to do the same thing.
 
 <figure>
   <img src="/images/mb.webp" alt="mb bischoff. a white trans woman in a red dress on a roof">
-  <figcaption>photo by jäger</figcaption>
+  <figcaption>photo by [jäger](https://www.instagram.com/ashtray_angels/)</figcaption>
 </figure>
 
 [**<span class="first-name">mb</span> bischoff**](https://mbbischoff.com) (aka chroma) writes poems & programs in new york. she’s soft & trans.
