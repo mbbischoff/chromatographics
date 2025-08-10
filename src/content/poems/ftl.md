@@ -2,7 +2,7 @@
 id: "ftl"
 title: "ftl"
 color:
-  hex: "3950A0"
+  hex: "#3950A0"
   name: "Dazzling Blue"
   link: "https://www.pantone.com/color-finder/18-3949-TCX"
 felt: 2022-02-12
