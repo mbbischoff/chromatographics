@@ -119,6 +119,7 @@ img {
     margin-top: 1rem;
     border-radius: 2rem;
     border: 2px solid var(--color-border-light);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 a img {
@@ -129,8 +130,13 @@ a:hover img {
     border: 2px solid var(--color-candy-apple-red);
 }
 
+/* Rotate the about page figure for a physical look */
+figure:has(img[src="/images/mb.webp"]) {
+    transform: rotate(2deg);
+}
+
 figure {
-    margin: 1rem 0;
+    margin: 1rem -1rem;
 }
 
 figcaption {
