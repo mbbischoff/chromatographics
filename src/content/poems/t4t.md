@@ -8,6 +8,7 @@ color:
 written: 2022-04-15
 published: 2025-08-09
 preformatted: false
+titleFont: "Lacrima Serif Bold Italic"
 publications:
   - title: "beestung #12"
     link: "https://beestungmag.com/issue12/in-your-ideal-world-what-does-the-future-of-gender-look-like-and-t4t-by-matthew-bischoff/"
