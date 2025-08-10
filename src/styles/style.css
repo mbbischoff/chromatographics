@@ -2,6 +2,7 @@
     --color-background: white;
     --color-text: black;
     --color-text-light: #666;
+    --color-border-light: #eee;
     --color-candy-apple-red: #B60017;
 }
 
@@ -105,7 +106,7 @@ p:not(pre p) {
 
 blockquote {
     font-style: italic;
-    border-left: 1px solid var(--color-candy-apple-red);
+    border-left: 2px solid var(--color-candy-apple-red);
     padding-left: 1rem;
     margin-left: 0;
     margin-right: 0;
@@ -117,7 +118,15 @@ img {
     height: auto;
     margin-top: 1rem;
     border-radius: 2rem;
-    border: 1px solid var(--color-candy-apple-red);
+    border: 2px solid var(--color-border-light);
+}
+
+a img {
+    transition: border 0.2s ease;
+}
+
+a:hover img {
+    border: 2px solid var(--color-candy-apple-red);
 }
 
 figure {
