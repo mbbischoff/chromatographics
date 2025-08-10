@@ -17,4 +17,4 @@ they attempt to do the same thing.
   <figcaption>photo by <a href="https://www.instagram.com/ashtray_angels/">jäger</a></figcaption>
 </figure>
 
-[**<span class="first-name">mb</span> bischoff**](https://mbbischoff.com) (aka chroma) writes poems & programs in new york. she’s soft & trans.
+[**<span class="first-name">mb</span> bischoff**](https://mbbischoff.com) (_aka_ chroma) writes poems & programs in new york. she’s soft & trans.
