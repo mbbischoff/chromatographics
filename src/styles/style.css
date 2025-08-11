@@ -110,7 +110,9 @@ a:not(.poem-link) {
 a:hover {
     cursor: pointer;
     text-decoration: underline;
+    text-decoration-skip-ink: all;
     text-decoration-style: wavy;
+    text-decoration-thickness: 1.5px;
 }
 
 .first-name {
