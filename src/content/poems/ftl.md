@@ -45,6 +45,6 @@ sharing a small space
 finally knowing
 
 nervously waiting
-for your to arrive
+for you to arrive
 _fuck, now we’re dating._
 we instantly vibe
