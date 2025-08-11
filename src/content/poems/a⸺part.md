@@ -4,7 +4,7 @@ title: "a⸺part"
 color:
   hex: "#81D8D0"
   name: "Tiffany® Blue"
-  link: "https://www.pantone.com/color-finder/20-0069-TPM"
+  link: "https://en.wikipedia.org/wiki/Tiffany_Blue"
 felt: 2019-12-26
 written: 2019-12-26
 published: 2025-08-11
