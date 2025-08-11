@@ -1,8 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
-const aboutEntry = await getEntry('pages', 'about');
+const pages = await getCollection('pages');
+const aboutEntry = pages.find(page => page.slug === 'about');
+
+if (!aboutEntry) {
+  throw new Error('About page not found');
+}
+
 const { Content } = await aboutEntry.render();
 ---
 
