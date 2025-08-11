@@ -17,6 +17,7 @@ const { poem }: { poem: CollectionEntry<'poems'> } = Astro.props;
 // Get first few lines for description
 const lines = poem.body.split('\n').filter(line => line.trim());
 const description = lines.slice(0, 2).join(' ').substring(0, 160) || 'A poem by mb bischoff';
+const plainTitle = poem.data.title.replace(/<[^>]*>/g, '');
 ---
 
 <Layout 
