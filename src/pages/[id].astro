@@ -13,8 +13,18 @@ export async function getStaticPaths() {
 }
 
 const { poem }: { poem: CollectionEntry<'poems'> } = Astro.props;
+
+// Get first few lines for description
+const lines = poem.body.split('\n').filter(line => line.trim());
+const description = lines.slice(0, 2).join(' ').substring(0, 160) || 'A poem by mb bischoff';
 ---
 
-<Layout title={poem.data.title}>
+<Layout 
+  title={plainTitle}
+  ogTitle={poem.data.title}
+  ogDescription={description}
+  ogImage={`/og/${poem.slug}.png`}
+  ogUrl={`https://chromato.graphics/${poem.slug}`}
+>
   <Poem poem={poem} isPermalink={true} />
 </Layout> 

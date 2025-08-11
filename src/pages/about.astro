@@ -12,7 +12,13 @@ if (!aboutEntry) {
 const { Content } = await aboutEntry.render();
 ---
 
-<Layout title={aboutEntry.data.title}>
+<Layout 
+  title={aboutEntry.data.title}
+  ogTitle={aboutEntry.data.title}
+  ogDescription={aboutEntry.data.description}
+  ogImage="/og/about.png"
+  ogUrl={Astro.url.toString()}
+>
   <section class="about-content">
     <Content />
   </section>
