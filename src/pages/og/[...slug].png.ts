@@ -101,15 +101,15 @@ function adjustColorLuminance(hexColor: string, targetLuminance: number): string
 
 
 
-function truncateContent(content: string, isPreformatted: boolean, maxLines = 4, maxWords = 15): string {
+function truncateContent(content: string, isPreformatted: boolean, maxLines = 4, maxWords = 20): string {
   if (isPreformatted) {
     const lines = content.split('\n').filter(line => line.trim());
     const truncated = lines.slice(0, maxLines).join('\n');
-    return lines.length > maxLines ? `${truncated}...` : truncated;
+    return lines.length > maxLines ? `${truncated}` : truncated;
   } else {
     const words = content.split(/\s+/).filter(word => word.trim());
     const truncated = words.slice(0, maxWords).join(' ');
-    return words.length > maxWords ? `${truncated}...` : truncated;
+    return words.length > maxWords ? `${truncated}` : truncated;
   }
 }
 
