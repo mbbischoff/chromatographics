@@ -101,6 +101,33 @@ function adjustColorLuminance(hexColor: string, targetLuminance: number): string
 
 
 
+function normalizeSpecialCharacters(text: string): string {
+  // Replace special dashes with regular em dash
+  let normalized = text
+    .replace(/⸺/g, '—')  // 2-em dash to em dash
+    .replace(/⸻/g, '—')  // 3-em dash to em dash  
+    .replace(/―/g, '—')  // Horizontal bar to em dash
+    .replace(/──/g, '—') // Double hyphen-minus to em dash
+    .replace(/--/g, '—'); // Double hyphen to em dash
+  
+  // Replace special spaces with regular space
+  normalized = normalized
+    .replace(/[\u2009]/g, ' ')  // Thin space to regular space
+    .replace(/[\u200A]/g, ' ')  // Hair space to regular space
+    .replace(/[\u00A0]/g, ' ')  // Non-breaking space to regular space
+    .replace(/[\u2002]/g, ' ')  // En space to regular space
+    .replace(/[\u2003]/g, ' ')  // Em space to regular space
+    .replace(/[\u2004]/g, ' ')  // Three-per-em space to regular space
+    .replace(/[\u2005]/g, ' ')  // Four-per-em space to regular space
+    .replace(/[\u2006]/g, ' ')  // Six-per-em space to regular space
+    .replace(/[\u2007]/g, ' ')  // Figure space to regular space
+    .replace(/[\u2008]/g, ' ')  // Punctuation space to regular space
+    .replace(/[\u202F]/g, ' ')  // Narrow no-break space to regular space
+    .replace(/[\u205F]/g, ' '); // Medium mathematical space to regular space
+    
+  return normalized;
+}
+
 function truncateContent(content: string, isPreformatted: boolean, maxLines = 4, maxWords = 20): string {
   if (isPreformatted) {
     const lines = content.split('\n').filter(line => line.trim());
@@ -142,7 +169,7 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
   
   if (type === 'poem' && entry) {
     const poemEntry = entry as CollectionEntry<'poems'>;
-    title = poemEntry.data.title.replace(/<[^>]*>/g, ''); // Strip HTML tags
+    title = normalizeSpecialCharacters(poemEntry.data.title.replace(/<[^>]*>/g, '')); // Strip HTML tags and normalize special characters
     titleColor = poemEntry.data.color?.hex || '#000000';
     backgroundColor = poemEntry.data.backgroundColor || adjustColorLuminance(titleColor, 0.98);
     textColor = poemEntry.data.textColor || adjustColorLuminance(titleColor, 0.02);
@@ -170,8 +197,11 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
     // Truncate the content first (before converting to HTML divs)
     const truncatedContent = truncateContent(textContent, isPreformatted);
     
-    // Split truncated content into lines and process each line separately
-    const lines = truncatedContent.split('\n');
+    // Normalize special characters in the truncated content
+    const normalizedContent = normalizeSpecialCharacters(truncatedContent);
+    
+    // Split normalized content into lines and process each line separately
+    const lines = normalizedContent.split('\n');
     const processedLines = lines.map(line => {
       if (line.trim() === '') return '';
       return `<div style="display: flex; flex-wrap: wrap; white-space: pre-wrap;">${line}</div>`;
@@ -334,7 +364,7 @@ export const GET: APIRoute = async ({ props }) => {
       .png()
       .toBuffer();
     
-    return new Response(png, {
+    return new Response(png as Uint8Array, {
       headers: {
         'Content-Type': 'image/png',
         'Cache-Control': 'public, max-age=31536000, immutable',
