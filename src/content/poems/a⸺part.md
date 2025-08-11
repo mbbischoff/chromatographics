@@ -3,7 +3,7 @@ id: "a⸺part"
 title: "a⸺part"
 color:
   hex: "#81D8D0"
-  name: "1837 Blue"
+  name: "Tiffany® Blue"
   link: "https://www.pantone.com/color-finder/20-0069-TPM"
 felt: 2019-12-26
 written: 2019-12-26
