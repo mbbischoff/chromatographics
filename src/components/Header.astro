@@ -5,11 +5,6 @@ import { siteConfig } from '../data/site';
 <header class="masthead">
   <h1 class="title"><a href="/">{siteConfig.title}</a></h1>
   <p class="subtitle"><a href="/about">gay poems</a> by <strong><a href={siteConfig.author.url}><span class="first-name">{siteConfig.author.firstName}</span> {siteConfig.author.lastName}</a></strong></p>
-  <nav class="main-nav">
-    <a href="/" class="nav-link">all poems</a>
-    <a href="/tags" class="nav-link">tags</a>
-    <a href="/about" class="nav-link">about</a>
-  </nav>
 </header>
 
 <style>
@@ -40,26 +35,7 @@ import { siteConfig } from '../data/site';
     letter-spacing: -0.06em;
     color: var(--color-text-light);
   }
-
-  .main-nav {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .nav-link {
-    color: var(--color-text-light);
-    text-decoration: none;
-    font-family: 'Lacrima Serif Bold', serif;
-    font-size: 1rem;
-    transition: color 0.2s ease-in-out;
-  }
-
-  .nav-link:hover {
-    color: var(--color-candy-apple-red);
-  }
-
+  
   @keyframes rainbow {
     0% { color: #B60017; }  /* Candy Apple Red */
     14.285% { color: #ff8e00; } /* Orange */
