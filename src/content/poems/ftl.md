@@ -8,6 +8,7 @@ color:
 felt: 2022-02-12
 written: 2022-03-30
 published: 2025-08-10
+tags: ["love", "dating", "queer", "romance"]
 ---
 random chance meeting
 sweater that shimmers

@@ -8,6 +8,7 @@ color:
 felt: 2025-06-15
 written: 2025-07-19
 published: 2025-08-06
+tags: ["love", "intimacy", "control", "power"]
 ---
 you ask me if i’m okay
 ⸻ with elevators?

@@ -8,6 +8,7 @@ color:
 felt: 2025-06-13
 written: 2025-06-22
 published: 2025-08-07
+tags: ["tattoo", "art", "intimacy", "pain", "transformation"]
 ---
 door opens— am i the fool?
 gloves snap, now i’m playing my role

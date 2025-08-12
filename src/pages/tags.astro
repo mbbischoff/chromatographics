@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const poems = await getCollection('poems');
+const tagCounts = new Map<string, number>();
+
+// Count poems for each tag
+poems.forEach(poem => {
+  if (poem.data.tags) {
+    poem.data.tags.forEach(tag => {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  }
+});
+
+// Sort tags alphabetically
+const sortedTags = Array.from(tagCounts.entries()).sort(([a], [b]) => a.localeCompare(b));
+---
+
+<Layout title="All Tags - chromatographics">
+  <div class="tags-header">
+    <h1>All Tags</h1>
+    <p class="tag-count">{sortedTags.length} tag{sortedTags.length !== 1 ? 's' : ''}</p>
+  </div>
+  
+  <div class="tags-grid">
+    {sortedTags.map(([tag, count]) => (
+      <a href={`/tag/${tag}`} class="tag-link">
+        <div class="tag-card">
+          <h2 class="tag-name">{tag}</h2>
+          <p class="poem-count">{count} poem{count !== 1 ? 's' : ''}</p>
+        </div>
+      </a>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .tags-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .tags-header h1 {
+    font-family: 'Lacrima Serif Bold', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+  
+  .tag-count {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+  }
+  
+  .tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .tag-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .tag-card {
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .tag-card:hover {
+    transform: translateY(-0.2rem);
+    box-shadow: 0 0.2rem 0.8rem var(--color-shadow);
+    border-color: var(--color-candy-apple-red);
+  }
+  
+  .tag-name {
+    font-family: 'Lacrima Serif Bold', serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-candy-apple-red);
+  }
+  
+  .poem-count {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+</style>

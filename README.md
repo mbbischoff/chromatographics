@@ -2,6 +2,13 @@
 
 A collection of gay poems by mb bischoff, built with Astro.
 
+## Features
+
+- **Color-coded poems**: Each poem has configurable colors for title, background, and text
+- **Tagging system**: Poems can be tagged and filtered by themes
+- **Responsive design**: Works on desktop and mobile devices
+- **Dark mode support**: Automatically adapts to user's color scheme preference
+
 ## Development
 
 This site has been converted from a static HTML site to an Astro project while maintaining the original design. Each poem now has configurable colors for:
@@ -50,13 +57,29 @@ npm run preview
 
 ### Adding New Poems
 
-To add a new poem, edit `src/data/poems.ts` and add a new poem object with:
+To add a new poem, create a new Markdown file in `src/content/poems/` with the following frontmatter:
 
-- `id`: Unique identifier
-- `title`: Poem title
-- `titleColor`: Color for the title (hex code)
-- `backgroundColor`: Background color (hex code)
-- `textColor`: Text color (hex code)
-- `content`: The poem content (can include HTML tags like `<em>`)
+```yaml
+---
+id: "poem-id"
+title: "Poem Title"
+color:
+  hex: "#FF0000"
+  name: "Color Name"
+  link: "https://color-reference.com"
+felt: 2025-01-01
+written: 2025-01-01
+published: 2025-01-01
+tags: ["tag1", "tag2", "tag3"]
+---
+```
 
-The site will automatically render all poems with their specified colors.
+The poem content goes below the frontmatter. You can use HTML tags for formatting.
+
+### Tagging System
+
+Poems can be tagged with themes and topics. Tags are displayed on individual poem pages and can be used to filter poems:
+
+- Visit `/tags` to see all available tags
+- Click on any tag to see all poems with that tag
+- Tags are also displayed on the main page for quick navigation

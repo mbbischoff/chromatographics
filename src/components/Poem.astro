@@ -93,6 +93,20 @@ const darkModeTextColor = adjustLuminance(titleColor, 0.7);
               </td>
             </tr>
           )}
+          {poem.data.tags && poem.data.tags.length > 0 && (
+            <tr>
+              <td>tags</td>
+              <td>
+                <div class="tags-list">
+                  {poem.data.tags.map((tag) => (
+                    <a href={`/tag/${tag}`} class="tag-link">
+                      {tag}
+                    </a>
+                  ))}
+                </div>
+              </td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
@@ -103,6 +117,18 @@ const darkModeTextColor = adjustLuminance(titleColor, 0.7);
       <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
+      {poem.data.tags && poem.data.tags.length > 0 && (
+        <div class="poem-tags">
+          {poem.data.tags.slice(0, 3).map((tag) => (
+            <a href={`/tag/${tag}`} class="poem-tag">
+              {tag}
+            </a>
+          ))}
+          {poem.data.tags.length > 3 && (
+            <span class="more-tags">+{poem.data.tags.length - 3}</span>
+          )}
+        </div>
+      )}
       {poem.data.preformatted ? (
         <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
       ) : (
@@ -191,6 +217,55 @@ const darkModeTextColor = adjustLuminance(titleColor, 0.7);
 
   .color-row span {
     border: 1px solid var(--poem-color-border, transparent);
+  }
+
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .tag-link {
+    display: inline-block;
+    background-color: var(--color-candy-apple-red);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .tag-link:hover {
+    opacity: 0.8;
+  }
+
+  .poem-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .poem-tag {
+    display: inline-block;
+    background-color: var(--poem-title-color, var(--color-candy-apple-red));
+    color: white;
+    padding: 0.125rem 0.5rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
+    font-size: 0.75rem;
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  .poem-tag:hover {
+    opacity: 0.8;
+  }
+
+  .more-tags {
+    color: var(--poem-title-color, var(--color-candy-apple-red));
+    font-size: 0.75rem;
+    opacity: 0.8;
   }
 
   /* Dark mode specific styling for poems */

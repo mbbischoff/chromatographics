@@ -1,0 +1,87 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Poem from '../../components/Poem.astro';
+
+export async function getStaticPaths() {
+  const poems = await getCollection('poems');
+  const allTags = new Set<string>();
+  
+  // Collect all unique tags from all poems
+  poems.forEach(poem => {
+    if (poem.data.tags) {
+      poem.data.tags.forEach(tag => allTags.add(tag));
+    }
+  });
+  
+  // Create a path for each tag
+  return Array.from(allTags).map(tag => ({
+    params: { tag },
+    props: { tag }
+  }));
+}
+
+const { tag } = Astro.params;
+const poems = await getCollection('poems');
+
+// Filter poems that have the specified tag
+const taggedPoems = poems.filter(poem => 
+  poem.data.tags && poem.data.tags.includes(tag)
+);
+
+// Sort poems by published date in reverse chronological order
+const sortedPoems = taggedPoems.sort((a, b) => 
+  new Date(b.data.published).getTime() - new Date(a.data.published).getTime()
+);
+---
+
+<Layout title={`Poems tagged "${tag}" - chromatographics`}>
+  <div class="tag-header">
+    <h1>Poems tagged "<span class="tag-name">{tag}</span>"</h1>
+    <p class="poem-count">{sortedPoems.length} poem{sortedPoems.length !== 1 ? 's' : ''}</p>
+    <a href="/" class="back-link">← Back to all poems</a>
+  </div>
+  
+  {sortedPoems.map((poem: CollectionEntry<'poems'>) => (
+    <Poem poem={poem} />
+  ))}
+</Layout>
+
+<style>
+  .tag-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .tag-header h1 {
+    font-family: 'Lacrima Serif Bold', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text);
+  }
+  
+  .tag-name {
+    color: var(--color-candy-apple-red);
+  }
+  
+  .poem-count {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+  
+  .back-link {
+    display: inline-block;
+    color: var(--color-candy-apple-red);
+    text-decoration: none;
+    font-family: 'Lacrima Serif Bold', serif;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .back-link:hover {
+    opacity: 0.8;
+  }
+</style>
