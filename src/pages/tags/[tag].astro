@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Poem from '../../components/Poem.astro';
+
+export async function getStaticPaths() {
+  const poems = await getCollection('poems');
+  
+  // Get all unique tags from all poems
+  const allTags = new Set<string>();
+  poems.forEach(poem => {
+    if (poem.data.tags) {
+      poem.data.tags.forEach(tag => allTags.add(tag));
+    }
+  });
+  
+  return Array.from(allTags).map(tag => ({
+    params: { tag },
+    props: { tag },
+  }));
+}
+
+const { tag }: { tag: string } = Astro.props;
+
+// Get all poems with this tag
+const allPoems = await getCollection('poems');
+const taggedPoems = allPoems.filter(poem => 
+  poem.data.tags && poem.data.tags.includes(tag)
+);
+
+// Sort by published date (newest first)
+taggedPoems.sort((a, b) => new Date(b.data.published).getTime() - new Date(a.data.published).getTime());
+---
+
+<Layout 
+  title={`${tag} - chromatographics`}
+  ogTitle={`"${tag}"`}
+  ogDescription={`poems tagged "${tag}" by mb bischoff`}
+  ogUrl={`${Astro.url.toString()}`}
+>
+  <header class="tag-header">
+    <h1>#{tag}</h1>
+    <p>{taggedPoems.length} poem{taggedPoems.length === 1 ? '' : 's'}</p>
+  </header>
+  
+  {taggedPoems.map((poem: CollectionEntry<'poems'>) => (
+    <Poem poem={poem} />
+  ))}
+</Layout>
+
+<style>
+  .tag-header {
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+  
+  .tag-header h1 {
+    font-size: 1.5rem;
+    margin-bottom: -0.2rem;
+    color: var(--text-color);
+  }
+  
+  .tag-header p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+  }
+</style>

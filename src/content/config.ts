@@ -32,6 +32,7 @@ const poemsCollection = defineCollection({
     publications: z.array(PublicationSchema).optional(),
     preformatted: z.boolean().default(true),
     ignoresDarkMode: z.boolean().default(false),
+    tags: z.array(z.string()).optional(),
   }),
 });
 
