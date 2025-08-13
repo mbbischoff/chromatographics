@@ -25,9 +25,9 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></div>
       )}
     </article>
     <div class="metadata-table">
@@ -105,9 +105,9 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></div>
       )}
     </article>
   </a>
