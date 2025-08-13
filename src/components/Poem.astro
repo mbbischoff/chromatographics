@@ -20,7 +20,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 
 {isPermalink ? (
   <>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
       <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
@@ -100,7 +100,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
   </>
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
       <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
@@ -196,15 +196,15 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 
   /* Dark mode specific styling for poems */
   @media (prefers-color-scheme: dark) {
-    .poem {
+    .poem:not(.ignores-dark-mode) {
       background-color: color-mix(in srgb, var(--poem-title-color, #000000) 10%, transparent) !important;
     }
     
-     .poem .stanzas {
+    .poem:not(.ignores-dark-mode) .stanzas {
       color: var(--poem-dark-text-color, #000000) !important;
     }
 
-    .poem-title {
+    .poem:not(.ignores-dark-mode) .poem-title {
       color: var(--poem-dark-text-color, #000000) !important;
     }
 
