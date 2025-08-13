@@ -13,7 +13,7 @@ publications:
   - title: "beestung #12"
     link: "https://beestungmag.com/issue12/in-your-ideal-world-what-does-the-future-of-gender-look-like-and-t4t-by-matthew-bischoff/"
     date: 2022-08-20
-tags: ["pc", "future", "trans", "technology", "lips", "love", "change", "plants", "fiction", "keys","sex","gender","politics"]
+tags: ["pc", "future", "trans", "technology", "lips", "love", "change", "plants", "fiction", "keys","sex","gender","politics","🪴"]
 ---
 i read that things used to be different for us. that we used to hide behind heavy coats, from ourselves. i read that we’d get compared to cigarettes on the street in broad daylight just for walking the wrong way. things are different for us now. not because we are the majority, but because we are not, and we know that. our difference is our value.
 
