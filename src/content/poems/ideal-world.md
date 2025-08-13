@@ -17,7 +17,7 @@ publications:
   - title: "beestung #12"
     link: "https://beestungmag.com/issue12/in-your-ideal-world-what-does-the-future-of-gender-look-like-and-t4t-by-matthew-bischoff/"
     date: 2022-08-20
-tags: ["future", "trans", "gender", "religion","tw","gender reveal"]
+tags: ["future", "trans", "gender", "religion","tw","gender reveal","politics","boundaries"]
 ---
 gender      abolition
 pronoun  coronation
