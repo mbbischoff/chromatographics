@@ -8,7 +8,7 @@ color:
 felt: 2025-06-15
 written: 2025-07-19
 published: 2025-08-06
-tags: ["cj", "san francisco", "elevators", "technology", "light", "sex","transit","trans","lips","magic,"time"]
+tags: ["cj", "san francisco", "elevators", "technology", "light", "sex","transit","trans","lips", "magic, "time"]
 
 ---
 you ask me if i’m okay
