@@ -7,6 +7,7 @@ color:
   link: "https://www.pantone.com/color-finder/19-1764-TCX"
 written: 2020-09-12
 published: 2025-08-12
+textFontMultiplier: 0.8
 ---
 
 back then, i saw your body just on screens —
