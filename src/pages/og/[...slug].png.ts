@@ -6,6 +6,7 @@ import { html } from 'satori-html';
 import sharp from 'sharp';
 import fs from 'fs/promises';
 import path from 'path';
+import { adjustLuminance } from '../../utils/colors';
 
 // Types
 interface OGImageProps {
@@ -25,6 +26,11 @@ interface OGImageData {
   titleColor: string;
   backgroundColor: string;
   textColor: string;
+  titleFont?: string;
+  textFont?: string;
+  titleFontMultiplier?: number;
+  textFontMultiplier?: number;
+  textFontWeight?: string;
 }
 
 // Constants
@@ -61,43 +67,6 @@ const FONT_CONFIG = {
 } as const;
 
 // Utility functions
-function hexToRgb(hex: string): { r: number; g: number; b: number } {
-  const cleanHex = hex.replace('#', '');
-  const r = parseInt(cleanHex.substring(0, 2), 16);
-  const g = parseInt(cleanHex.substring(2, 4), 16);
-  const b = parseInt(cleanHex.substring(4, 6), 16);
-  return { r, g, b };
-}
-
-function rgbToHex(r: number, g: number, b: number): string {
-  return `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-}
-
-function adjustColorLuminance(hexColor: string, targetLuminance: number): string {
-  const { r, g, b } = hexToRgb(hexColor);
-  
-  if (targetLuminance > 0.5) {
-    // For high luminance (like 98%), blend with white
-    const whiteBlend = targetLuminance;
-    const colorBlend = 1 - targetLuminance;
-    
-    const newR = Math.round(r * colorBlend + 255 * whiteBlend);
-    const newG = Math.round(g * colorBlend + 255 * whiteBlend);
-    const newB = Math.round(b * colorBlend + 255 * whiteBlend);
-    
-    return rgbToHex(newR, newG, newB);
-  } else {
-    // For low luminance (like 2%), blend with black
-    const blackBlend = 1 - targetLuminance;
-    const colorBlend = targetLuminance;
-    
-    const newR = Math.round(r * colorBlend + 0 * blackBlend);
-    const newG = Math.round(g * colorBlend + 0 * blackBlend);
-    const newB = Math.round(b * colorBlend + 0 * blackBlend);
-    
-    return rgbToHex(newR, newG, newB);
-  }
-}
 
 
 
@@ -166,13 +135,28 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
   let backgroundColor = '#ffffff';
   let textColor = '#333333';
   let content = '';
+  let titleFont: string | undefined;
+  let textFont: string | undefined;
+  let titleFontMultiplier: number | undefined;
+  let textFontMultiplier: number | undefined;
+  let textFontWeight: string | undefined;
   
   if (type === 'poem' && entry) {
     const poemEntry = entry as CollectionEntry<'poems'>;
     title = normalizeSpecialCharacters(poemEntry.data.title.replace(/<[^>]*>/g, '')); // Strip HTML tags and normalize special characters
-    titleColor = poemEntry.data.color?.hex || '#000000';
-    backgroundColor = poemEntry.data.backgroundColor || adjustColorLuminance(titleColor, 0.98);
-    textColor = poemEntry.data.textColor || adjustColorLuminance(titleColor, 0.02);
+    
+    // Calculate default colors based on title color (matching Poem.astro logic)
+    const baseTitleColor = poemEntry.data.color?.hex || '#000000';
+    titleColor = poemEntry.data.titleColor || baseTitleColor;
+    backgroundColor = poemEntry.data.backgroundColor || adjustLuminance(baseTitleColor, 0.98);
+    textColor = poemEntry.data.textColor || adjustLuminance(baseTitleColor, 0.02);
+    
+    // Extract font properties from poem data
+    titleFont = poemEntry.data.titleFont;
+    textFont = poemEntry.data.textFont;
+    titleFontMultiplier = poemEntry.data.titleFontMultiplier;
+    textFontMultiplier = poemEntry.data.textFontMultiplier;
+    textFontWeight = poemEntry.data.textFontWeight;
     
     // Render the markdown content to HTML and extract text
     const { Content } = await poemEntry.render();
@@ -221,14 +205,40 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
     titleColor,
     backgroundColor,
     textColor,
+    titleFont,
+    textFont,
+    titleFontMultiplier,
+    textFontMultiplier,
+    textFontWeight,
   };
 }
 
 function createOGImageTemplate(data: OGImageData) {
-  const { title, subtitle, content, titleColor, backgroundColor, textColor } = data;
-  const fontSize = title.length > OG_IMAGE_CONFIG.titleFontSize.threshold 
+  const { title, subtitle, content, titleColor, backgroundColor, textColor, titleFont, textFont, titleFontMultiplier, textFontMultiplier, textFontWeight } = data;
+  
+  // Calculate font sizes with multipliers
+  const baseTitleFontSize = title.length > OG_IMAGE_CONFIG.titleFontSize.threshold 
     ? OG_IMAGE_CONFIG.titleFontSize.small 
     : OG_IMAGE_CONFIG.titleFontSize.large;
+  const titleFontSize = titleFontMultiplier ? baseTitleFontSize * titleFontMultiplier : baseTitleFontSize;
+  const contentFontSize = textFontMultiplier ? OG_IMAGE_CONFIG.contentFontSize * textFontMultiplier : OG_IMAGE_CONFIG.contentFontSize;
+  
+  // Determine font families and weights
+  const titleFontFamily = 'Lacrima';
+  const textFontFamily = 'Lacrima';
+  
+  // Map font weights
+  const getFontWeight = (weight?: string) => {
+    if (!weight) return 'normal';
+    switch (weight) {
+      case '500': return '500';
+      case 'bold': return 'bold';
+      case '700': return 'bold';
+      default: return 'normal';
+    }
+  };
+  
+  const textWeight = getFontWeight(textFontWeight);
   
   return html(`
     <div style="
@@ -247,22 +257,24 @@ function createOGImageTemplate(data: OGImageData) {
         justify-content: center;
       ">
         <h1 style="
-          font-size: ${fontSize}px;
+          font-size: ${titleFontSize}px;
           color: ${titleColor};
           margin: 0;
           line-height: ${OG_IMAGE_CONFIG.lineHeight.title};
           font-weight: bold;
+          font-family: '${titleFontFamily}', ${FONT_CONFIG.fallback};
         ">${title}</h1>
         
         ${content ? `
           <div style="
             display: flex;
             flex-direction: column;
-            font-size: ${OG_IMAGE_CONFIG.contentFontSize}px;
+            font-size: ${contentFontSize}px;
             color: ${textColor};
             margin-top: ${OG_IMAGE_CONFIG.margins.content}px;
             line-height: ${OG_IMAGE_CONFIG.lineHeight.content};
-            font-family: 'Lacrima', ${FONT_CONFIG.fallback};
+            font-family: '${textFontFamily}', ${FONT_CONFIG.fallback};
+            font-weight: ${textWeight};
           ">${content}</div>
         ` : ''}
       </div>
@@ -364,7 +376,7 @@ export const GET: APIRoute = async ({ props }) => {
       .png()
       .toBuffer();
     
-    return new Response(png as Uint8Array, {
+    return new Response(png, {
       headers: {
         'Content-Type': 'image/png',
         'Cache-Control': 'public, max-age=31536000, immutable',
