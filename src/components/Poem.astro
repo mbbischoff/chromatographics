@@ -74,6 +74,20 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
               ) : 'Unknown'}
             </td>
           </tr>
+          {poem.data.tags && poem.data.tags.length > 0 && (
+            <tr>
+              <td>tags</td>
+              <td>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; max-width: 20rem;">
+                  {poem.data.tags.sort().map((tag) => (
+                    <a href={`/tags/${tag}`} style="color: inherit; white-space: nowrap; font-size: 0.875rem;">
+                      #{tag}
+                    </a>
+                  ))}
+                </div>
+              </td>
+            </tr>
+          )}
           {poem.data.publications && poem.data.publications.length > 0 && (
             <tr>
               <td>published</td>
@@ -175,6 +189,13 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 
   .metadata-table a {
     color: var(--color-candy-apple-red);
+  }
+
+  .metadata-table a:hover {
+    text-decoration: underline;
+    text-decoration-skip-ink: all;
+    text-decoration-style: wavy;
+    text-decoration-thickness: 1.5px;
   }
   
   .metadata-table {
