@@ -21,13 +21,13 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 {isPermalink ? (
   <>
     <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`}>
-      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></div>
       )}
     </article>
     <div class="metadata-table">
@@ -101,13 +101,13 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
     <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`}>
-      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}`}>
+      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}`}><Content /></div>
       )}
     </article>
   </a>
