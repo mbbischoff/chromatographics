@@ -8,6 +8,7 @@ color:
 felt: 2019-12-26
 written: 2019-12-26
 published: 2025-08-11
+tags: ["ks", "distance", "string", "sex", "skin", "touch"]
 ---
 
 thin string between us

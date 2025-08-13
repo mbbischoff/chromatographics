@@ -12,6 +12,7 @@ publications:
   - title: "Poetry is Gay #2"
     link: "https://www.brookefinegold.com/store/p/poetry-is-gay-the-zine-issue-1"
     date: 2025-07-11
+tags: ["bb", "time", "music", "love", "trans"]
 ---
 one fifty-four
 is not the hour

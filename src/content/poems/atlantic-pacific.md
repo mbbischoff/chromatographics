@@ -7,6 +7,7 @@ color:
   link: "https://www.pantone.com/color-finder/19-4122-tcx"
 written: 2025-05-15
 published: 2025-08-01
+tags: ["rc", "san francisco", "new york", "technology", "music", "weather", "sea", "ink", "distance"]
 ---
 
 i often wake three hours before
