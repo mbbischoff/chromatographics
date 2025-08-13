@@ -11,10 +11,11 @@ const { poem, isPermalink = false } = Astro.props;
 const { Content } = await poem.render();
 
 // Calculate default colors based on title color
-const titleColor = poem.data.color?.hex || '#000000';
-const backgroundColor = poem.data.backgroundColor || adjustLuminance(titleColor, 0.98);
-const textColor = poem.data.textColor || adjustLuminance(titleColor, 0.02);
-const darkModeTextColor = adjustLuminance(titleColor, 0.7);
+const baseTitleColor = poem.data.color?.hex || '#000000';
+const titleColor = poem.data.titleColor || baseTitleColor;
+const backgroundColor = poem.data.backgroundColor || adjustLuminance(baseTitleColor, 0.98);
+const textColor = poem.data.textColor || adjustLuminance(baseTitleColor, 0.02);
+const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 ---
 
 {isPermalink ? (
@@ -24,9 +25,9 @@ const darkModeTextColor = adjustLuminance(titleColor, 0.7);
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></div>
       )}
     </article>
     <div class="metadata-table">
@@ -104,9 +105,9 @@ const darkModeTextColor = adjustLuminance(titleColor, 0.7);
         <span set:html={poem.data.title}></span>
       </h2>
       {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};`}><Content /></pre>
+        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};`}><Content /></div>
+        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}`}><Content /></div>
       )}
     </article>
   </a>
