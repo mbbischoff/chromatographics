@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+// Get all poems to extract tags
+const poems = await getCollection('poems');
+
+// Get all unique tags and count poems for each tag
+const tagCounts = new Map<string, number>();
+poems.forEach(poem => {
+  if (poem.data.tags) {
+    poem.data.tags.forEach(tag => {
+      tagCounts.set(tag, (tagCounts.get(tag) || 0) + 1);
+    });
+  }
+});
+
+// Sort tags alphabetically
+const sortedTags = Array.from(tagCounts.entries()).sort(([a], [b]) => a.localeCompare(b));
+---
+
+<Layout 
+  title="tags • chromatographics"
+  ogTitle="tags"
+  ogDescription="all tags on chromatographics"
+  ogUrl={`${Astro.url.toString()}`}
+>
+  <header class="tags-header">
+    <h1>tags</h1>
+    <p>{sortedTags.length} tag{sortedTags.length === 1 ? '' : 's'}</p>
+  </header>
+  
+  <div class="tags-grid">
+    {sortedTags.map(([tag, count]) => (
+      <a href={`/tags/${tag}`} class="tag-link">
+        <span class="tag-name">#{tag}</span>
+        <span class="tag-count">{count} poem{count === 1 ? '' : 's'}</span>
+      </a>
+    ))}
+  </div>
+</Layout>
+
+<style>
+  .tags-header {
+    text-align: center;
+    margin-block-end: 2rem;
+  }
+  
+  .tags-header h1 {
+    font-size: 1.4rem;
+    margin-bottom: -0.2rem;
+    color: var(--text-color);
+  }
+  
+  .tags-header p {
+    font-size: 1rem;
+    color: var(--secondary-color);
+  }
+  
+  .tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    max-width: 24rem;
+    margin: 0 auto;
+  }
+  
+  .tag-link {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;  
+    color: inherit;
+    transition: all 0.2s ease;
+  }
+  
+  .tag-name {
+    font-size: 1.1rem;
+  }
+  
+  .tag-count {
+    font-size: 0.8rem;
+    color: var(--secondary-color);
+  }
+</style>
