@@ -37,7 +37,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
             <td>color</td>
             <td>
               {poem.data.color ? (
-                <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color.hex}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
+                <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" style={`color: ${titleColor}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
                   <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
                   {poem.data.color.name}
                 </a>
