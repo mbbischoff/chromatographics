@@ -7,7 +7,7 @@ color:
   link: "https://www.pantone.com/color-finder/18-4936-TCX"
 written: 2025-04-12
 published: 2025-08-08
-tags: ["pc", "sex", "technology", "religion", "love", "film", "trans", "new york"]
+tags: ["pc", "sex", "technology", "religion", "love", "film", "trans", "new york", "🪴"]
 ---
 he’s wanted one, i think, a while
 still growing his, it takes its time

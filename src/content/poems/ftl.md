@@ -8,7 +8,7 @@ color:
 felt: 2022-02-12
 written: 2022-03-30
 published: 2025-08-10
-tags: ["pc", "crush", "friends", "love", "red", "food", "clothes", "trans", "gender", "new york"]
+tags: ["pc", "crush", "friends", "love", "red", "food", "clothes", "trans", "gender", "new york","🪴"]
 ---
 random chance meeting
 sweater that shimmers
