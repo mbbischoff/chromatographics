@@ -30,6 +30,13 @@ import { siteConfig } from '../data/site';
     animation-play-state: paused;
   }
 
+  /* Disable animation for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    h1.title a {
+      animation: none;
+    }
+  }
+
   p.subtitle, p.subtitle a {
     font-size: 1.4rem;
     letter-spacing: -0.06em;
