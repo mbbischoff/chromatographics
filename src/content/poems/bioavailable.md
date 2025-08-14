@@ -7,7 +7,7 @@ color:
   link: "https://www.pantone.com/color-finder/14-4816-tcx"
 written: 2025-07-20
 published: 2025-08-03
-tags: ["cv", "trans", "estrogen", "medicine", "love", "distance", "💛", "needles","blood"]
+tags: ["trans", "estrogen", "medicine", "love", "distance", "💛", "needles","blood"]
 ---
 
 there’s always a question
