@@ -2,7 +2,7 @@
 id: "eigengrau"
 title: "eigengrau"
 color:
-  hex: "29292E"
+  hex: "#29292E"
   name: "Char"
   link: "https://www.pantone.com/color-finder/19-3904-TSX"
 felt: 2025-08-04
