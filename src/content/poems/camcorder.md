@@ -3,7 +3,7 @@ id: "camcorder"
 title: "camcorder"
 color:
   hex: "#8D8E92"
-  name: "Chisled Stone"
+  name: "Chiseled Stone"
   link: "https://www.pantone.com/color-finder/16-3917-TCX"
 felt: 2025-06-27
 written: 2025-08-17
