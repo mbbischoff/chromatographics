@@ -5,7 +5,7 @@ color:
   hex: "#8D8E92"
   name: "Chisled Stone"
   link: "https://www.pantone.com/color-finder/16-3917-TCX"
-felt: 2025-07-08
+felt: 2025-06-27
 written: 2025-08-17
 published: 2025-08-17
 tags: ["📈", "pain", "technology", "cameras", "red", "sight", "trans", "poly"]
