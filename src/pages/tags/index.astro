@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import PageHeader from '../../components/PageHeader.astro';
 
 // Get all poems to extract tags
 const poems = await getCollection('poems');
@@ -25,10 +26,7 @@ const sortedTags = Array.from(tagCounts.entries()).sort(([a], [b]) => a.localeCo
   ogDescription="all tags on chromatographics"
   ogUrl={`${Astro.url.toString()}`}
 >
-  <header class="tags-header">
-    <h1>tags</h1>
-    <p>{sortedTags.length} tag{sortedTags.length === 1 ? '' : 's'}</p>
-  </header>
+  <PageHeader title="tags" subtitle={`${sortedTags.length} tag${sortedTags.length === 1 ? '' : 's'}`} />
   
   <div class="tags-grid">
     {sortedTags.map(([tag, count]) => (
@@ -41,22 +39,6 @@ const sortedTags = Array.from(tagCounts.entries()).sort(([a], [b]) => a.localeCo
 </Layout>
 
 <style>
-  .tags-header {
-    text-align: center;
-    margin-block-end: 2rem;
-  }
-  
-  .tags-header h1 {
-    font-size: 1.4rem;
-    margin-bottom: -0.2rem;
-    color: var(--text-color);
-  }
-  
-  .tags-header p {
-    font-size: 1rem;
-    color: var(--secondary-color);
-  }
-  
   .tags-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

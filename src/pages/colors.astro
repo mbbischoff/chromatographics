@@ -1,0 +1,124 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { sortPoemsBySpectrum } from '../utils/colors';
+import PageHeader from '../components/PageHeader.astro';
+
+const poems = await getCollection('poems');
+const poemsWithColors = poems.filter(poem => poem.data.color?.hex);
+const sortedPoems = sortPoemsBySpectrum(poemsWithColors);
+---
+
+<Layout title="Colors - chromatographics">
+  <div class="colors-page">
+    <PageHeader title="colors" />
+
+    <table class="colors-table">
+      <tbody>
+        {sortedPoems.map((poem: CollectionEntry<'poems'>) => (
+          <tr>
+            <td class="swatch-cell">
+              <span class="swatch" style={`background-color: ${poem.data.color!.hex};`}></span>
+            </td>
+            <td class="color-name-cell">
+              {poem.data.color!.link ? (
+                <a href={poem.data.color!.link} class="color-link" target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color!.hex};`}>
+                  <span class="color-name">{poem.data.color!.name}</span>
+                </a>
+              ) : (
+                <span class="color-name" style={`color: ${poem.data.color!.hex};`}>{poem.data.color!.name}</span>
+              )}
+            </td>
+            <td class="title-cell">
+              <a href={`/${poem.slug}`} class="poem-link">
+                <span set:html={poem.data.title}></span>
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+</Layout>
+
+<style>
+  .colors-page {
+    max-width: 24rem;
+    margin: 0 auto;
+    padding: 0 1rem 1rem;
+  }
+
+  .colors-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .colors-table tr {
+    border-bottom: 1px solid var(--color-border-light);
+  }
+
+  .colors-table tr:last-child {
+    border-bottom: none;
+  }
+
+  .swatch-cell, .title-cell {
+    padding: 0.5rem 1rem;
+    vertical-align: middle;
+  }
+
+  .swatch-cell {
+    width: 2.5rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .color-name-cell {
+    padding: 0.5rem;
+    vertical-align: middle;
+    width: 10em;
+    font-size: 0.75rem;
+  }
+
+  .color-name {
+    font-family: 'Lacrima Serif Bold';
+  }
+
+  .color-link {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .color-link:hover {
+    text-decoration: underline;
+  }
+
+  .swatch {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 1px solid var(--color-swatch-border);
+  }
+
+  .poem-link {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+  }
+
+  .poem-link:hover {
+    text-decoration: underline;
+  }
+
+  /* Dark mode styling for color names */
+  @media (prefers-color-scheme: dark) {
+    .color-name {
+      color: var(--color-text) !important;
+    }
+    
+    .color-link {
+      color: var(--color-text) !important;
+    }
+  }
+</style>

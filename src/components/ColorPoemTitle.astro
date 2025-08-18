@@ -1,0 +1,102 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+export interface Props {
+  poem: CollectionEntry<'poems'>;
+}
+
+const { poem } = Astro.props;
+---
+
+<article class="color-poem-title">
+  <div class="color-info">
+    {poem.data.color ? (
+      <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" class="color-link">
+        <span class="color-swatch" style={`background-color: ${poem.data.color.hex};`}></span>
+        <span class="color-name">{poem.data.color.name}</span>
+      </a>
+    ) : (
+      <span class="color-name">No color</span>
+    )}
+  </div>
+  <h2 class="poem-title">
+    <a href={`/${poem.data.id}`}>
+      <span set:html={poem.data.title}></span>
+    </a>
+  </h2>
+</article>
+
+<style>
+  .color-poem-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: var(--background-color, #ffffff);
+    border: 1px solid var(--border-color, #e5e5e5);
+    transition: all 0.2s ease;
+  }
+
+  .color-poem-title:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .color-info {
+    flex-shrink: 0;
+  }
+
+  .color-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .color-swatch {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .color-name {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    color: var(--text-color);
+  }
+
+  .poem-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .poem-title a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.2s ease;
+  }
+
+  .poem-title a:hover {
+    color: var(--accent-color, #666);
+  }
+
+  @media (max-width: 768px) {
+    .color-poem-title {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    
+    .poem-title {
+      font-size: 1.25rem;
+    }
+  }
+</style>

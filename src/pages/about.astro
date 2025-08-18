@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import PageHeader from '../components/PageHeader.astro';
 
 const pages = await getCollection('pages');
 const aboutEntry = pages.find(page => page.slug === 'about');
@@ -19,6 +20,7 @@ const { Content } = await aboutEntry.render();
   ogImage="/og/about.png"
   ogUrl={Astro.url.toString()}
 >
+  <PageHeader title="about" />
   <section class="about-content">
     <Content />
   </section>

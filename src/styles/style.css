@@ -5,6 +5,7 @@
     --color-border-light: #eee;
     --color-candy-apple-red: #B60017;
     --shadow-subtle: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    --color-swatch-border: rgba(0, 0, 0, 0.15);
 }
 
 /* System dark mode preference */
@@ -16,6 +17,7 @@
         --color-border-light: #333;
         --color-candy-apple-red: #FF334D;
         --shadow-subtle: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.3);
+        --color-swatch-border: rgba(255, 255, 255, 0.2);
     }
 }
 
