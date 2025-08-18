@@ -34,7 +34,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
       <table>
         <tbody>
           <tr class="color-row">
-            <td>color</td>
+            <td><a href="/colors">color</a></td>
             <td>
               {poem.data.color ? (
                 <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.ignoresDarkMode ? 'inherit' : titleColor}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
@@ -76,7 +76,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
           </tr>
           {poem.data.tags && poem.data.tags.length > 0 && (
             <tr>
-              <td>tags</td>
+              <td><a href="/tags">tags</a></td>
               <td>
                 <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; max-width: 18rem;">
                   {poem.data.tags.sort().map((tag) => (
@@ -185,6 +185,10 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
   .metadata-table td:first-child {
     font-family: 'Lacrima Serif Bold', serif;
     padding-inline-end: 2rem;
+  }
+
+  .metadata-table td:first-child a {
+    color: inherit;
   }
 
   .metadata-table a {
