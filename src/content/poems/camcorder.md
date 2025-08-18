@@ -8,7 +8,7 @@ color:
 felt: 2025-06-27
 written: 2025-08-17
 published: 2025-08-17
-tags: ["📈", "pain", "technology", "cameras", "red", "sight", "trans", "poly"]
+tags: ["📈", "pain", "technology", "cameras", "red", "sight", "trans", "polyamory"]
 ---
 
 twentysomething object
