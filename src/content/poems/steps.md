@@ -7,7 +7,7 @@ color:
   link: "https://www.pantone.com/color-finder/18-1663-TCX"
 written: 2022-10-17
 published: 2025-08-20
-tags: ["feet","furniture","boots","scent","perfume","curves","sight","eyes","queen","water","sex","💙"]
+tags: ["feet","furniture","boots","scent","perfume","curves","sight","eyes","queen","water","sex","💙","shoes","nails","red"]
 ---
 
 now please, sit back
