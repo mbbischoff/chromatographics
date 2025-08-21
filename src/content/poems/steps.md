@@ -2,7 +2,7 @@
 id: "steps"
 title: "steps"
 color:
-  hex: "BE132D"
+  hex: "#BE132D"
   name: "Chinese Red"
   link: "https://www.pantone.com/color-finder/18-1663-TCX"
 written: 2022-10-17
