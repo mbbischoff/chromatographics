@@ -2,9 +2,9 @@
 id: "poison"
 title: "poison"
 color:
-  hex: "#29292E"
-  name: "Char"
-  link: "https://www.pantone.com/color-finder/19-3904-TSX"
+  hex: "#3B363C"
+  name: "Obsidian"
+  link: "https://www.pantone.com/connect/19-3902-TCX"
 felt: 2025-08-10
 written: 2025-08-25
 published: 2025-08-26
