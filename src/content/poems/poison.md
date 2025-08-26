@@ -12,7 +12,7 @@ backgroundColor: "#3B363C"
 textColor: "#FAFAFA"
 titleColor: "#FAFAFA"
 ignoresDarkMode: true
-tags: ["💛", "💙", "🧡", "📈", "🌿", "🗡️", "liquid", "frames", "death", "healing", "medicine","pain","drinks","fire","red","black","metal","spirits","love","fear"]
+tags: ["💛", "💙", "🧡", "📈", "🌿", "🗡️", "liquid", "frames", "death", "healing", "medicine","pain","drinks","red","black","metal","spirits","love","fear","burns"]
 ---
 
 the black bottle kept
