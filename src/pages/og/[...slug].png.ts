@@ -27,6 +27,7 @@ interface OGImageData {
   backgroundColor: string;
   textColor: string;
   titleFont?: string;
+  titleFontWeight?: string;
   textFont?: string;
   titleFontMultiplier?: number;
   textFontMultiplier?: number;
@@ -136,6 +137,7 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
   let textColor = '#333333';
   let content = '';
   let titleFont: string | undefined;
+  let titleFontWeight: string | undefined;
   let textFont: string | undefined;
   let titleFontMultiplier: number | undefined;
   let textFontMultiplier: number | undefined;
@@ -153,6 +155,7 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
     
     // Extract font properties from poem data
     titleFont = poemEntry.data.titleFont;
+    titleFontWeight = poemEntry.data.titleFontWeight;
     textFont = poemEntry.data.textFont;
     titleFontMultiplier = poemEntry.data.titleFontMultiplier;
     textFontMultiplier = poemEntry.data.textFontMultiplier;
@@ -206,6 +209,7 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
     backgroundColor,
     textColor,
     titleFont,
+    titleFontWeight,
     textFont,
     titleFontMultiplier,
     textFontMultiplier,
@@ -214,7 +218,7 @@ async function generateOGImageData(props: OGImageProps): Promise<OGImageData> {
 }
 
 function createOGImageTemplate(data: OGImageData) {
-  const { title, subtitle, content, titleColor, backgroundColor, textColor, titleFont, textFont, titleFontMultiplier, textFontMultiplier, textFontWeight } = data;
+  const { title, subtitle, content, titleColor, backgroundColor, textColor, titleFont, titleFontWeight, textFont, titleFontMultiplier, textFontMultiplier, textFontWeight } = data;
   
   // Calculate font sizes with multipliers
   const baseTitleFontSize = title.length > OG_IMAGE_CONFIG.titleFontSize.threshold 
@@ -232,12 +236,14 @@ function createOGImageTemplate(data: OGImageData) {
     if (!weight) return 'normal';
     switch (weight) {
       case '500': return '500';
+      case '600': return '600';
       case 'bold': return 'bold';
       case '700': return 'bold';
       default: return 'normal';
     }
   };
   
+  const titleWeight = getFontWeight(titleFontWeight);
   const textWeight = getFontWeight(textFontWeight);
   
   return html(`
@@ -261,7 +267,7 @@ function createOGImageTemplate(data: OGImageData) {
           color: ${titleColor};
           margin: 0;
           line-height: ${OG_IMAGE_CONFIG.lineHeight.title};
-          font-weight: bold;
+          font-weight: ${titleWeight};
           font-family: '${titleFontFamily}', ${FONT_CONFIG.fallback};
         ">${title}</h1>
         

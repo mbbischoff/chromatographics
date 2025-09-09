@@ -20,6 +20,7 @@ const poemsCollection = defineCollection({
     color: ColorSchema.optional(),
     titleFont: z.string().optional(),
     titleFontMultiplier: z.number().optional(),
+    titleFontWeight: z.string().optional(),
     textFont: z.string().optional(),
     textFontMultiplier: z.number().optional(),
     textFontWeight: z.string().optional(),
