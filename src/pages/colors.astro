@@ -2,12 +2,38 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
-import { sortPoemsBySpectrum } from '../utils/colors';
+import { sortPoemsBySpectrum, hexToHsl } from '../utils/colors';
 import PageHeader from '../components/PageHeader.astro';
 
 const poems = await getCollection('poems');
 const poemsWithColors = poems.filter(poem => poem.data.color?.hex);
-const sortedPoems = sortPoemsBySpectrum(poemsWithColors);
+
+// Group poems by color name
+const colorGroups = new Map<string, CollectionEntry<'poems'>[]>();
+poemsWithColors.forEach(poem => {
+  const colorName = poem.data.color!.name;
+  if (!colorGroups.has(colorName)) {
+    colorGroups.set(colorName, []);
+  }
+  colorGroups.get(colorName)!.push(poem);
+});
+
+// Create color groups and sort them using the existing function
+const sortedColorGroups = Array.from(colorGroups.entries())
+  .map(([colorName, poems]) => ({
+    colorName,
+    hex: poems[0].data.color!.hex,
+    color: poems[0].data.color!,
+    poems: sortPoemsBySpectrum(poems)
+  }))
+  .sort((a, b) => {
+    // Use the existing hexToHsl function for sorting
+    const [hueA] = hexToHsl(a.hex);
+    const [hueB] = hexToHsl(b.hex);
+    const adjustedHueA = hueA > 0.9 ? hueA - 1 : hueA;
+    const adjustedHueB = hueB > 0.9 ? hueB - 1 : hueB;
+    return adjustedHueA - adjustedHueB;
+  });
 ---
 
 <Layout title="Colors - chromatographics">
@@ -16,24 +42,29 @@ const sortedPoems = sortPoemsBySpectrum(poemsWithColors);
 
     <table class="colors-table">
       <tbody>
-        {sortedPoems.map((poem: CollectionEntry<'poems'>) => (
+        {sortedColorGroups.map((colorGroup) => (
           <tr>
             <td class="swatch-cell">
-              <span class="swatch" style={`background-color: ${poem.data.color!.hex};`}></span>
+              <span class="swatch" style={`background-color: ${colorGroup.hex};`}></span>
             </td>
             <td class="color-name-cell">
-              {poem.data.color!.link ? (
-                <a href={poem.data.color!.link} class="color-link" target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.color!.hex};`}>
-                  <span class="color-name">{poem.data.color!.name}</span>
+              {colorGroup.color.link ? (
+                <a href={colorGroup.color.link} class="color-link" target="_blank" rel="noopener noreferrer" style={`color: ${colorGroup.hex};`}>
+                  <span class="color-name">{colorGroup.colorName}</span>
                 </a>
               ) : (
-                <span class="color-name" style={`color: ${poem.data.color!.hex};`}>{poem.data.color!.name}</span>
+                <span class="color-name" style={`color: ${colorGroup.hex};`}>{colorGroup.colorName}</span>
               )}
             </td>
             <td class="title-cell">
-              <a href={`/${poem.slug}`} class="poem-link">
-                <span set:html={poem.data.title}></span>
-              </a>
+              {colorGroup.poems.map((poem, index) => (
+                <>
+                  <a href={`/${poem.slug}`} class="poem-link">
+                    <span set:html={poem.data.title}></span>
+                  </a>
+                  {index < colorGroup.poems.length - 1 && <br />}
+                </>
+              ))}
             </td>
           </tr>
         ))}
