@@ -48,9 +48,21 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
             <tr>
               <td>felt</td>
               <td>
-                <time datetime={new Date(poem.data.felt).toISOString()}>
-                  {new Date(poem.data.felt).toISOString().split('T')[0]}
-                </time>
+                {Array.isArray(poem.data.felt) ? (
+                  <div>
+                    {poem.data.felt.map((date, index) => (
+                      <time datetime={new Date(date).toISOString()}>
+                        {new Date(date).toISOString().split('T')[0]}
+                      </time>
+                    )).reduce((acc, curr, index) => {
+                      return index === 0 ? [curr] : [...acc, ', ', curr];
+                    }, [])}
+                  </div>
+                ) : (
+                  <time datetime={new Date(poem.data.felt).toISOString()}>
+                    {new Date(poem.data.felt).toISOString().split('T')[0]}
+                  </time>
+                )}
               </td>
             </tr>
           )}
