@@ -2,9 +2,9 @@
 id: "mirror"
 title: "mirror"
 color:
-  hex: ""
-  name: ""
-  link: ""
+  hex: "#5DB7B1"
+  name: "Aquarium"
+  link: "https://www.pantone.com/color-finder/15-5220-TPG"
 felt: [2024-08-24, 2024-09-22, 2025-04-06, 2025-06-24, 2025-06-30]
 written: 2022-09-24
 published: 2025-09-25
