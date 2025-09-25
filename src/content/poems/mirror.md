@@ -1,6 +1,7 @@
 ---
 id: "mirror"
 title: "mirror"
+textFontMultiplier: 0.98
 color:
   hex: "#5DB7B1"
   name: "Aquarium"
@@ -53,4 +54,4 @@ under blankets and cardboard towers.
 i’m sorry i looked so long.
 i knew you were a mirror,
 but i couldn’t spot the vanishing point.
-some reflections distort while yours perfects.
+some reflections distort; yours perfects.
