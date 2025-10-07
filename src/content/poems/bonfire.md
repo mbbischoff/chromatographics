@@ -2,9 +2,14 @@
 id: "bonfire"
 title: "bonfire"
 color:
-  hex: "#A0B267"
-  name: "Herbal Garden"
+  hex: "#2E3C41"
+  name: "Magical Forest"
   link: "https://www.pantone.com/connect/15-0336-TPG"
+
+backgroundColor: "#2E3C41"
+textColor: "#F9FAFA"
+titleColor: "#F9FAFA"
+
 felt: 2025-06-13
 written: 2025-10-07
 published: 2025-10-07
