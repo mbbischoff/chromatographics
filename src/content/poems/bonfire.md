@@ -9,6 +9,7 @@ color:
 backgroundColor: "#37413A"
 textColor: "#F9FAFA"
 titleColor: "#F9FAFA"
+ignoresDarkMode: true
 
 felt: 2025-06-13
 written: 2025-10-07
