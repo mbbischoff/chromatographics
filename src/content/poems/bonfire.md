@@ -2,11 +2,11 @@
 id: "bonfire"
 title: "bonfire"
 color:
-  hex: "#2E3C41"
-  name: "Magical Forest"
-  link: "https://www.pantone.com/connect/15-0336-TPG"
+  hex: "#37413A"
+  name: "Deep Forest"
+  link: "https://www.pantone.com/connect/19-6110-TCX"
 
-backgroundColor: "#2E3C41"
+backgroundColor: "#37413A"
 textColor: "#F9FAFA"
 titleColor: "#F9FAFA"
 
