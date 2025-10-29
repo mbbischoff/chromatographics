@@ -33,7 +33,7 @@ fell into a concrete pool
 cut and bruised joints
 
 you caught me there
-held me—rubbed salt
+held me — rubbed salt
 into my fresh wounds
 to heal and to hurt me
 
