@@ -10,6 +10,8 @@ backgroundColor: "#CD2428"
 textColor: "#FDF6F6"
 titleColor: "#FDF6F6"
 ignoresDarkMode: true
+textFont: "Lacrima Serif Bold"
+
 
 felt: [2025-08-29, 2025-09-02, 2025-10-23, 2025-10-24, 2025-10-25, 2025-10-27]
 written: 2025-10-28
