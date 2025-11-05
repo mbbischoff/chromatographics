@@ -24,6 +24,8 @@ const poemsCollection = defineCollection({
     textFont: z.string().optional(),
     textFontMultiplier: z.number().optional(),
     textFontWeight: z.string().optional(),
+    stickerFont: z.string().optional(),
+    stickerFontSizeMultiplier: z.number().optional(),
     backgroundColor: z.string().optional(),
     textColor: z.string().optional(),
     titleColor: z.string().optional(),
@@ -34,6 +36,7 @@ const poemsCollection = defineCollection({
     preformatted: z.boolean().default(true),
     ignoresDarkMode: z.boolean().default(false),
     tags: z.array(z.string()).optional(),
+    sampledFrom: z.string().optional(),
   }),
 });
 

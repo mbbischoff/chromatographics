@@ -1,0 +1,38 @@
+---
+export interface Props {
+  borderColor?: string;
+  backgroundColor?: string;
+  textColor?: string;
+  font?: string;
+  fontWeight?: string;
+  fontSizeMultiplier?: number;
+}
+
+const { 
+  borderColor = 'var(--poem-title-color, #000000)',
+  backgroundColor = 'inherit',
+  textColor = 'var(--poem-title-color, #000000)',
+  font = "var(--poem-sticker-font, 'Lacrima Senza Bold', sans-serif)",
+  fontWeight="var(--poem-sticker-font-weight, 700)",
+  fontSizeMultiplier
+} = Astro.props;
+---
+
+<div 
+  class="sticker"
+  style={`
+    display: block;
+    border-color: ${borderColor};
+    border-width: 2px;
+    text-align: center;
+    border-style: solid;
+    border-radius: 1.5rem;
+    background-color: ${backgroundColor};
+    color: ${textColor};
+    font-family: ${font};
+    ${fontWeight ? `font-weight: ${fontWeight};` : ''}
+    ${fontSizeMultiplier ? `font-size: ${fontSizeMultiplier}em;` : 'font-size: calc(var(--poem-sticker-font-size-multiplier, 1) * 1em);'}
+  `}
+>
+  <slot />
+</div>

@@ -20,7 +20,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 
 {isPermalink ? (
   <>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};${poem.data.stickerFont ? ` --poem-sticker-font: ${poem.data.stickerFont};` : ''}${poem.data.stickerFontSizeMultiplier ? ` --poem-sticker-font-size-multiplier: ${poem.data.stickerFontSizeMultiplier};` : ''}`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
       <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}${poem.data.titleFontWeight ? ` font-weight: ${poem.data.titleFontWeight};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
@@ -127,7 +127,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
   </>
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
+    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};${poem.data.stickerFont ? ` --poem-sticker-font: ${poem.data.stickerFont};` : ''}${poem.data.stickerFontSizeMultiplier ? ` --poem-sticker-font-size-multiplier: ${poem.data.stickerFontSizeMultiplier};` : ''}`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
       <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}${poem.data.titleFontWeight ? ` font-weight: ${poem.data.titleFontWeight};` : ''}`}>
         <span set:html={poem.data.title}></span>
       </h2>
@@ -225,6 +225,7 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
   .color-row span {
     border: 1px solid var(--poem-color-border, transparent);
   }
+
 
   /* Dark mode specific styling for poems */
   @media (prefers-color-scheme: dark) {
