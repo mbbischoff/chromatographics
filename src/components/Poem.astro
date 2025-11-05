@@ -254,4 +254,11 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
       border: 1px solid var(--color-text) !important;
     }
   }
+
+  /* Ensure italic text uses the poem's font family, not the global italic font */
+  :global(.poem .stanzas em),
+  :global(.poem pre.stanzas em) {
+    font-family: inherit !important;
+    font-style: italic;
+  }
 </style> 

@@ -39,6 +39,7 @@
     font-family: 'Lacrima Serif Regular Italic';
     src: url('/fonts/LacrimaMG-ItalicRegular.otf') format('opentype');
     font-weight: 400;
+    font-style: italic;
 }
 
 @font-face {
@@ -82,11 +83,6 @@ body {
 h1 {
     font-family: 'Lacrima Serif Bold', serif;
 }
-
-em {
-    font-family: 'Lacrima Serif Regular Italic', serif;
-}
-
 section.poems {
     padding-inline: 1rem;
 }
@@ -94,10 +90,6 @@ section.poems {
 pre {
     font-family: 'Lacrima Serif Regular', serif;
     margin: 0;
-}
-
-pre em {
-    font-family: 'Lacrima Serif Regular Italic', serif;
 }
 
 a {
