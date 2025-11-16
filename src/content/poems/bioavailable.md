@@ -5,6 +5,7 @@ color:
   hex: "#58C9D4"
   name: "Blue Radiance"
   link: "https://www.pantone.com/color-finder/14-4816-tcx"
+  sampled: estradiol
 written: 2025-07-20
 published: 2025-08-03
 tags: ["trans", "estrogen", "medicine", "love", "distance", "💛", "needles","blood"]
