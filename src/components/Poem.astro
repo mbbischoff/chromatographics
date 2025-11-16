@@ -44,10 +44,10 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
               ) : 'Unknown'}
             </td>
           </tr>
-          {poem.data.sampledFrom && (
+          {poem.data.color?.sampledFrom && (
             <tr>
               <td>sampled from</td>
-              <td>{poem.data.sampledFrom}</td>
+              <td>{poem.data.color.sampledFrom}</td>
             </tr>
           )}
           {poem.data.felt && (

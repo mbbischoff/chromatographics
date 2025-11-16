@@ -4,6 +4,7 @@ const ColorSchema = z.object({
   hex: z.string(),
   name: z.string(),
   link: z.string().optional(),
+  sampledFrom: z.string().optional(),
 });
 
 const PublicationSchema = z.object({
@@ -36,7 +37,6 @@ const poemsCollection = defineCollection({
     preformatted: z.boolean().default(true),
     ignoresDarkMode: z.boolean().default(false),
     tags: z.array(z.string()).optional(),
-    sampledFrom: z.string().optional(),
   }),
 });
 
