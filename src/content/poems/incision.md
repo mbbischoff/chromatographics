@@ -5,6 +5,7 @@ color:
   hex: "#A55B3B"
   name: "Autumnal"
   link: "https://www.pantone.com/connect/17-1342-TPG"
+  sampledFrom: surgical incision
 felt: 2022-09-10
 written: 2022-09-21
 published: 2025-09-21

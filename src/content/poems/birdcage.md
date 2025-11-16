@@ -5,6 +5,7 @@ color:
   hex: "#46647E"
   name: "Velvet Morning"
   link: "https://www.pantone.com/color-finder/18-3927-TCX"
+  sampledFrom: t-shirt
 felt: 2025-06-15
 written: 2025-07-19
 published: 2025-08-06

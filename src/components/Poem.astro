@@ -44,6 +44,12 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
               ) : 'Unknown'}
             </td>
           </tr>
+          {poem.data.sampledFrom && (
+            <tr>
+              <td>sampled from</td>
+              <td>{poem.data.sampledFrom}</td>
+            </tr>
+          )}
           {poem.data.felt && (
             Array.isArray(poem.data.felt) ? (
               poem.data.felt.map((date, index) => (

@@ -5,6 +5,7 @@ color:
   hex: "#3950A0"
   name: "Dazzling Blue"
   link: "https://www.pantone.com/color-finder/18-3949-TCX"
+  sampledFrom: sparkly sweater
 felt: 2022-02-12
 written: 2022-03-30
 published: 2025-08-10

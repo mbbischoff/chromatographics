@@ -5,6 +5,7 @@ color:
   hex: "#006D70"
   name: "Fanfare"
   link: "https://www.pantone.com/color-finder/18-4936-TCX"
+  sampledFrom: New York Toy Collective Shilo
 written: 2025-04-12
 published: 2025-08-08
 tags: ["sex", "technology", "religion", "love", "trans", "new york", "🪴","boundaries","gender","touch"]

@@ -5,6 +5,7 @@ color:
   hex: "#78C753"
   name: "Green Flash"
   link: "https://www.pantone.com/color-finder/15-0146-TCX"
+  sampledFrom: G Train
 written: 2022-04-15
 published: 2025-08-16
 tags: ["future", "trans", "technology", "apps", "lips", "red", "shapes", "black", "leather","boots","transit","trains", "♥️", "lipstick", "breasts", "games", "time"]
