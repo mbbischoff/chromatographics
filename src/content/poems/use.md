@@ -8,7 +8,7 @@ color:
 felt: 2025-10-26
 written: 2025-11-21
 published: 2025-11-20
-tags: ["identity", "glass", "photography", "love", "sparks", "pills", "black", "gold", "heat", "time", "gears", "light", "steel", "dark", "💛", "sex", "drinks", "fire"]
+tags: ["identity", "glass", "photography", "love", "sparks", "pills", "black", "gold", "heat", "time", "gears", "light", "steel", "dark", "💛", "sex", "drinks", "fire", "medicine", "transformation", "want", "excitement", "reactions", "metal", "peace", "hands", "linen"]
 ---
 craving total transformation,
 identity a disposed wrapper.
