@@ -7,7 +7,7 @@ color:
   link: "https://www.pantone.com/color-finder/18-1764-TCX"
 written: 2022-06-17
 published: 2025-08-05
-tags: ["bb", "lips", "wine", "red", "love", "new york", "marks", "trans", "new york", "🧡","drinks"]
+tags: ["lips", "wine", "red", "love", "new york", "marks", "trans", "new york", "🧡","drinks"]
 ---
 winter cherry, lush
 pressed to the pane :
