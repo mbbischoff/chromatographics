@@ -5,8 +5,8 @@ color:
   hex: "#440099"
   name: "Violet C"
   link: "https://www.pantone.com/connect/Violet-C"
-felt: 2022-10-26
-written: 2022-11-21
+felt: 2025-10-26
+written: 2025-11-21
 published: 2025-11-20
 tags: ["identity", "vessels", "glass", "photography", "love", "sparks", "pills", "black", "gold", "heat", "time", "gears", "light", "steel", "dark", "💛", "💜", "sex"]
 ---
