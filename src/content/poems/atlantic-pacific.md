@@ -20,7 +20,7 @@ one winter day you ask for
 notes on undersea strings
 aware of both the timbre
 and tempo of these songs
-we start signing together
+we start singing together
 
 i fall into an evening rhythm
 talking and yes moaning into
