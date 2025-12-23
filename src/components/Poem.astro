@@ -267,4 +267,11 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
     font-family: inherit !important;
     font-style: italic;
   }
+
+  /* When using Lacrima Serif Bold, italic text should use Lacrima Serif Bold Italic */
+  :global(.poem .stanzas[style*="Lacrima Serif Bold"] em),
+  :global(.poem pre.stanzas[style*="Lacrima Serif Bold"] em) {
+    font-family: 'Lacrima Serif Bold Italic', serif !important;
+    font-style: italic;
+  }
 </style> 
