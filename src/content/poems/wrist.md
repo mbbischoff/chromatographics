@@ -1,6 +1,6 @@
 ---
 id: "wrist"
-title: "writst"
+title: "wrist"
 color:
   hex: "#CD2428"
   name: "Endangered"
