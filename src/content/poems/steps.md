@@ -8,7 +8,7 @@ color:
   sampledFrom: Loubatains
 written: 2022-10-17
 published: 2025-08-20
-tags: ["feet","furniture","boots","scent","perfume","curves","sight","eyes","queen","water","sex","💙","shoes","nails","red"]
+tags: ["feet","furniture","boots","scent","perfume","curves","sight","eyes","queen","water","sex","🩵","shoes","nails","red"]
 ---
 
 now please, sit back
