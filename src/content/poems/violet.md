@@ -14,7 +14,7 @@ published: 2026-03-11
 tags: ["💛", "cameras", "voices", "flowers", "liquids", "lights", "twins", "sisters", "god", "🌿"]
 ---
 your aperture narrows
-as <em>f</em>/our voices deepen
+as <em>f</em> /our voices deepen
 sunlight burns through
 exposed cloth shutters
  
