@@ -29,6 +29,6 @@ lightbulb, glowing ruby
 our eyes don’t adjust yet
 
 we have twins, don’t we?
-or is it sisters, not twins?
+is it sisters, not twins?
 god, no that’s a different
 flower entirely — rosemary
