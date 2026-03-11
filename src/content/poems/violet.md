@@ -8,6 +8,7 @@ color:
 backgroundColor: "#440099"
 textColor: "#F9F5FF"
 titleColor: "#F9F5FF"
+textFont: "Lacrima Serif Bold"
 felt: 2025-02-23
 written: 2026-02-24
 published: 2026-03-11
