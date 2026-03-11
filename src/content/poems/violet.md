@@ -8,14 +8,13 @@ color:
 backgroundColor: "#440099"
 textColor: "#F9F5FF"
 titleColor: "#F9F5FF"
-textFont: "Lacrima Serif Bold"
 felt: 2025-02-23
 written: 2026-02-24
 published: 2026-03-11
 tags: ["💛", "cameras", "voices", "flowers", "liquids", "lights", "twins", "sisters", "god", "🌿"]
 ---
 your aperture narrows
-as *f* / our voices deepen
+as <em>f</em>/our voices deepen
 sunlight burns through
 exposed cloth shutters
  
