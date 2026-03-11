@@ -11,7 +11,7 @@ titleColor: "#F9F5FF"
 felt: 2025-02-23
 written: 2026-02-24
 published: 2026-03-11
-tags: ["💛", "cameras", "voices", "flowers", "liquids", "lights", "twins", "sisters", "god", "🌿"]
+tags: ["💛", "cameras", "voices", "flowers", "liquids", "lights", "twins", "sisters", "god", "🌿", "love"]
 ---
 your aperture narrows
 as <em>f</em> /our voices deepen
