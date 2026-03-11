@@ -265,9 +265,16 @@ const metadataLinkColor = hasCustomBackground ? '#000000' : titleColor;
     }
   }
 
-  /* Ensure italic text uses the poem's font family, not the global italic font */
-  :global(.poem .stanzas em),
-  :global(.poem pre.stanzas em) {
+  /* When poem has no custom textFont, italic should use Lacrima Serif Regular Italic (not synthesized) */
+  :global(.poem .stanzas:not([style*="font-family"]) em),
+  :global(.poem pre.stanzas:not([style*="font-family"]) em) {
+    font-family: 'Lacrima Serif Regular Italic', serif !important;
+    font-style: italic;
+  }
+
+  /* When poem has a custom font (e.g. Inter), italic inherits so the custom font’s italic is used */
+  :global(.poem .stanzas[style*="font-family"] em),
+  :global(.poem pre.stanzas[style*="font-family"] em) {
     font-family: inherit !important;
     font-style: italic;
   }
