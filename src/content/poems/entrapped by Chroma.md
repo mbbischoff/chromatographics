@@ -6,9 +6,9 @@ color:
   hex: "#CB2C30"
   name: "711 C"
   link: "https://www.pantone.com/color-finder/711-C"
-felt: 2025-07-08
-written: 2025-07-09
-published: 2025-08-13
+felt: 2025-03-11
+written: 2025-03-11
+published: 2025-03-20
 tags: ["goddess", "sunshine", "angel", "wings", "blood", "halos", "flowers", "religion", "💛", "white", "gold", "flying", "bruises"]
 ---
 
