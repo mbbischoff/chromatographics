@@ -9,7 +9,7 @@ color:
 felt: 2025-03-11
 written: 2025-03-11
 published: 2025-03-20
-tags: ["goddess", "sunshine", "angel", "wings", "blood", "halos", "flowers", "religion", "💛", "white", "gold", "flying", "bruises"]
+tags: ["goddess", "sunshine", "angels", "wings", "blood", "halos", "flowers", "religion", "💛", "white", "gold", "flying", "bruises"]
 ---
 
 meeting a Goddess, sunshine,
