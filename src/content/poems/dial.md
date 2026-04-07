@@ -2,7 +2,7 @@
 id: "dial"
 title: "dial"
 color:
-  hex: "#F3CF1D
+  hex: "#0091C9"
   name: "Bell System Process Blue"
   link: "https://archive.org/details/us-west-companies-graphic-standards/page/n39/mode/2up"
 titleFont: "monospace"
