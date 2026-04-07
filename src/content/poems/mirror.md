@@ -9,7 +9,7 @@ color:
 felt: [2024-08-24, 2024-09-22, 2025-04-06, 2025-06-24, 2025-06-30]
 written: 2022-09-24
 published: 2025-09-25
-tags: [ "💛", "mirrors", "parties", "portland", "berlin", "new york", "lenses", "light", "sun", "sunrise", "museums", "mail", "telephones", "gay", "hotels", "san francisco", "angles", "dreams", "sleep", "touch"]
+tags: ["💛", "mirrors", "photography", "communication", "parties", "portland", "berlin", "new york", "lenses", "light", "sun", "sunrise", "museums", "mail", "telephones", "gay", "hotels", "san francisco", "angles", "dreams", "sleep", "touch"]
 ---
 i’m sorry i bumped into you. 
 i thought you were a mirror. 

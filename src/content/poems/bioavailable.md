@@ -8,7 +8,7 @@ color:
   sampledFrom: estradiol
 written: 2025-07-20
 published: 2025-08-03
-tags: ["trans", "estrogen", "medicine", "love", "distance", "💛", "needles","blood"]
+tags: ["trans", "estrogen", "medicine", "love", "distance", "💛", "needles", "blood", "transformation", "ritual"]
 ---
 
 there’s always a question

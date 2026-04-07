@@ -16,7 +16,7 @@ titleColor: "#FEDB00"
 titleFontWeight: "900"
 textFontWeight: "600"
 ignoresDarkMode: true
-tags: ["app", "software", "object", "data", "love", "engineering", "💛", "tech", "touch", "airplanes", "white", "lights"]
+tags: ["app", "software", "object", "data", "love", "engineering", "technology", "💛", "touch", "airplanes", "white", "lights", "transformation", "ritual"]
 ---
 
 have you ever

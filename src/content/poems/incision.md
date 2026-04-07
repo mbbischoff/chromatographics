@@ -10,7 +10,7 @@ felt: 2022-09-10
 written: 2022-09-21
 published: 2025-09-21
 titleFont: "Lacrima Senza Bold"
-tags: ["🪴", "trans", "fall", "surgery", "central park", "drinks", "martini", "new york", "kisses", "time", "decisions", "clothes", "calls", "roofs", "sleep", "hearts", "scars", "pain", "tears", "bodies", "food", "photos"]
+tags: ["🪴", "trans", "transformation", "fall", "surgery", "central park", "drinks", "martini", "new york", "kisses", "time", "decisions", "clothes", "calls", "roofs", "sleep", "hearts", "scars", "pain", "tears", "bodies", "food", "photos"]
 ---
 
 half decade wishes:

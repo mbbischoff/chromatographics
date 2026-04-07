@@ -8,7 +8,7 @@ color:
 felt: 2025-06-13
 written: 2025-06-22
 published: 2025-08-07
-tags: ["san francisco", "pain", "control", "purple", "ink", "art", "tattoos", "swords", "skin", "blood", "marks", "trans", "needles","🌿","religion","science","magic", "🗡️"]
+tags: ["san francisco", "pain", "control", "intimacy", "purple", "ink", "art", "tattoos", "swords", "skin", "blood", "marks", "trans", "needles", "🌿", "religion", "science", "magic", "🗡️"]
 ---
 door opens— am i the fool?
 gloves snap, now i’m playing my role

@@ -13,7 +13,7 @@ written: 2025-12-10
 published: 2025-12-23
 ignoresDarkMode: true
 textFont: "Lacrima Serif Bold"
-tags: ["💛", "restaurants", "food", "cocktails", "drinks", "white", "red", "leather", "steel", "scars", "fear", "hunger", "gin", "wet", "lips", "mouths"]
+tags: ["💛", "restaurants", "food", "cocktails", "drinks", "intimacy", "white", "red", "leather", "steel", "scars", "fear", "hunger", "gin", "wet", "lips", "mouths"]
 ---
 
 a girl’s gotta eat,
