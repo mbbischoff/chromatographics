@@ -6,6 +6,7 @@ color:
   name: "Bell System Process Blue"
   link: "https://archive.org/details/us-west-companies-graphic-standards/page/n39/mode/2up"
 titleFont: "monospace"
+textFont: "monospace"
 felt: 2026-01-28
 written: 2026-01-31
 published: 2026-08-06
