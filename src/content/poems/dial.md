@@ -17,9 +17,9 @@ an operator obsesses
 over pickup & hangup
 
 one +1 more connected
-than 2. you will. and
+than 2. you will. _and
 the company that will
-bring it to you is me
+bring it to you is me_
 
 push digits into holes,
 keep spinning until you
