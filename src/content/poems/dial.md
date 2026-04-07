@@ -8,7 +8,7 @@ color:
 titleFont: "monospace"
 felt: 2026-01-28
 written: 2026-01-31
-published: 2025-08-06
+published: 2026-08-06
 tags: ["💛", "phones", "long-distance", "fingers", "numbers", "machines", "arms", "hands", "voices", "sounds", "sleep", "love"]
 ---
 two-tone composition
