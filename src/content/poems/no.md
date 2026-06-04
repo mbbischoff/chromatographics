@@ -5,6 +5,8 @@ color:
   hex: "#FEDB00"
   name: "108C"
   link: "https://www.pantone.com/color-finder/108-C"
+titleFont: "monospace"
+textFont: "monospace"
 written: 2026-04-25
 published: 2026-06-04
 backgroundColor: "#FEDB00"
