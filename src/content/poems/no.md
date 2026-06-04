@@ -13,6 +13,7 @@ backgroundColor: "#FEDB00"
 textColor: "#000000"
 titleColor: "#000000"
 ignoresDarkMode: true
+tags: ["💛", "control", "chastity", "religion", "sex", "water", "hunger", "time", "clocks", "love, "pain", "food"]
 ---
 
 do i have to belt you?
