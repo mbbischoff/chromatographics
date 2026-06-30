@@ -13,6 +13,12 @@ const PublicationSchema = z.object({
   date: z.date(),
 });
 
+const StripImageSchema = z.object({
+  src: z.string(),
+  alt: z.string(),
+  aspectRatio: z.string(),
+});
+
 const poemsCollection = defineCollection({
   type: 'content',
   schema: z.object({
@@ -37,6 +43,7 @@ const poemsCollection = defineCollection({
     preformatted: z.boolean().default(true),
     ignoresDarkMode: z.boolean().default(false),
     tags: z.array(z.string()).optional(),
+    stripImage: StripImageSchema.optional(),
   }),
 });
 

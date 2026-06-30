@@ -20,18 +20,39 @@ const darkModeTextColor = adjustLuminance(baseTitleColor, 0.7);
 // Otherwise use titleColor (CSS handles dark mode)
 const hasCustomBackground = !!poem.data.backgroundColor;
 const metadataLinkColor = hasCustomBackground ? '#000000' : titleColor;
+const stripImage = poem.data.stripImage;
+const stripImageStyle = stripImage
+  ? ` --strip-image-aspect-ratio: ${stripImage.aspectRatio};`
+  : '';
+const articleStyle = `background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};${poem.data.stickerFont ? ` --poem-sticker-font: ${poem.data.stickerFont};` : ''}${poem.data.stickerFontSizeMultiplier ? ` --poem-sticker-font-size-multiplier: ${poem.data.stickerFontSizeMultiplier};` : ''}${stripImageStyle}`;
+const linkedArticleStyle = `background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};${poem.data.stickerFont ? ` --poem-sticker-font: ${poem.data.stickerFont};` : ''}${poem.data.stickerFontSizeMultiplier ? ` --poem-sticker-font-size-multiplier: ${poem.data.stickerFontSizeMultiplier};` : ''}${stripImageStyle}`;
+const titleStyle = `color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}${poem.data.titleFontWeight ? ` font-weight: ${poem.data.titleFontWeight};` : ''}`;
+const stanzaStyle = `color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`;
 ---
 
 {isPermalink ? (
   <>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};${poem.data.stickerFont ? ` --poem-sticker-font: ${poem.data.stickerFont};` : ''}${poem.data.stickerFontSizeMultiplier ? ` --poem-sticker-font-size-multiplier: ${poem.data.stickerFontSizeMultiplier};` : ''}`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
-      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}${poem.data.titleFontWeight ? ` font-weight: ${poem.data.titleFontWeight};` : ''}`}>
+    <article id={poem.data.id} style={articleStyle} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
+      <h2 class="poem-title" style={titleStyle}>
         <span set:html={poem.data.title}></span>
       </h2>
-      {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></pre>
+      {stripImage ? (
+        <div class="poem-strip-layout">
+          <pre class="stanzas" style={stanzaStyle}><Content /></pre>
+          <figure class="poem-strip-figure">
+            <img
+              class="poem-strip-image"
+              src={stripImage.src}
+              alt={stripImage.alt}
+              loading={isPermalink ? 'eager' : 'lazy'}
+              decoding="async"
+            />
+          </figure>
+        </div>
+      ) : poem.data.preformatted ? (
+        <pre class="stanzas" style={stanzaStyle}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></div>
+        <div class="stanzas" style={stanzaStyle}><Content /></div>
       )}
     </article>
     <div class="metadata-table">
@@ -41,10 +62,17 @@ const metadataLinkColor = hasCustomBackground ? '#000000' : titleColor;
             <td><a href="/colors">color</a></td>
             <td>
               {poem.data.color ? (
-                <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.ignoresDarkMode ? 'inherit' : metadataLinkColor}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
-                  <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
-                  {poem.data.color.name}
-                </a>
+                poem.data.color.link ? (
+                  <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" style={`color: ${poem.data.ignoresDarkMode ? 'inherit' : metadataLinkColor}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
+                    <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
+                    {poem.data.color.name}
+                  </a>
+                ) : (
+                  <span style={`color: ${poem.data.ignoresDarkMode ? 'inherit' : metadataLinkColor}; display: inline-flex; align-items: center; gap: 0.5rem;`}>
+                    <span style={`display: inline-block; width: 0.75rem; height: 0.75rem; background-color: ${poem.data.color.hex}; border-radius: 50%; border: 1px solid ${poem.data.color.hex}40;`}></span>
+                    {poem.data.color.name}
+                  </span>
+                )
               ) : 'Unknown'}
             </td>
           </tr>
@@ -137,14 +165,27 @@ const metadataLinkColor = hasCustomBackground ? '#000000' : titleColor;
   </>
 ) : (
   <a href={`/${poem.slug}`} class="poem-link" style={`color: inherit; display: block;`}>
-    <article class="poem" id={poem.data.id} style={`background-color: ${backgroundColor}; border: 1px solid ${titleColor}20; --shadow-color: ${titleColor}1a; --poem-title-color: ${titleColor}; --poem-dark-text-color: ${darkModeTextColor};${poem.data.stickerFont ? ` --poem-sticker-font: ${poem.data.stickerFont};` : ''}${poem.data.stickerFontSizeMultiplier ? ` --poem-sticker-font-size-multiplier: ${poem.data.stickerFontSizeMultiplier};` : ''}`} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
-      <h2 class="poem-title" style={`color: ${titleColor};${poem.data.titleFont ? ` font-family: ${poem.data.titleFont};` : ''}${poem.data.titleFontMultiplier ? ` font-size: ${poem.data.titleFontMultiplier}em;` : ''}${poem.data.titleFontWeight ? ` font-weight: ${poem.data.titleFontWeight};` : ''}`}>
+    <article id={poem.data.id} style={linkedArticleStyle} class:list={['poem', { 'ignores-dark-mode': poem.data.ignoresDarkMode }]}>
+      <h2 class="poem-title" style={titleStyle}>
         <span set:html={poem.data.title}></span>
       </h2>
-      {poem.data.preformatted ? (
-        <pre class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></pre>
+      {stripImage ? (
+        <div class="poem-strip-layout">
+          <pre class="stanzas" style={stanzaStyle}><Content /></pre>
+          <figure class="poem-strip-figure">
+            <img
+              class="poem-strip-image"
+              src={stripImage.src}
+              alt={stripImage.alt}
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+        </div>
+      ) : poem.data.preformatted ? (
+        <pre class="stanzas" style={stanzaStyle}><Content /></pre>
       ) : (
-        <div class="stanzas" style={`color: ${textColor};${poem.data.textFont ? ` font-family: ${poem.data.textFont};` : ''}${poem.data.textFontMultiplier ? ` font-size: ${poem.data.textFontMultiplier}em;` : ''}${poem.data.textFontWeight ? ` font-weight: ${poem.data.textFontWeight};` : ''}`}><Content /></div>
+        <div class="stanzas" style={stanzaStyle}><Content /></div>
       )}
     </article>
   </a>
@@ -166,6 +207,42 @@ const metadataLinkColor = hasCustomBackground ? '#000000' : titleColor;
     line-height: 1.2;
     hanging-punctuation: first;
     margin-block-end: 1rem;
+  }
+
+  .poem-strip-layout {
+    position: relative;
+    inline-size: 100%;
+  }
+
+  .poem-strip-layout .stanzas :global(p) {
+    white-space: pre;
+  }
+
+  .poem-strip-layout > .stanzas {
+    inline-size: max-content;
+    max-inline-size: 100%;
+  }
+
+  .poem-strip-figure {
+    aspect-ratio: var(--strip-image-aspect-ratio);
+    inset-block: 0;
+    inset-inline-end: 0;
+    margin: 0;
+    position: absolute;
+  }
+
+  .poem-strip-image {
+    block-size: 100%;
+    border: 0;
+    box-shadow: none;
+    display: block;
+    inline-size: 100%;
+    margin: 0;
+    object-fit: contain;
+  }
+
+  .poem-link:hover .poem-strip-image {
+    border: 0;
   }
   
   .poem-link {
@@ -235,7 +312,6 @@ const metadataLinkColor = hasCustomBackground ? '#000000' : titleColor;
   .color-row span {
     border: 1px solid var(--poem-color-border, transparent);
   }
-
 
   /* Dark mode specific styling for poems */
   @media (prefers-color-scheme: dark) {

@@ -11,10 +11,17 @@ const { poem } = Astro.props;
 <article class="color-poem-title">
   <div class="color-info">
     {poem.data.color ? (
-      <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" class="color-link">
-        <span class="color-swatch" style={`background-color: ${poem.data.color.hex};`}></span>
-        <span class="color-name">{poem.data.color.name}</span>
-      </a>
+      poem.data.color.link ? (
+        <a href={poem.data.color.link} target="_blank" rel="noopener noreferrer" class="color-link">
+          <span class="color-swatch" style={`background-color: ${poem.data.color.hex};`}></span>
+          <span class="color-name">{poem.data.color.name}</span>
+        </a>
+      ) : (
+        <span class="color-link">
+          <span class="color-swatch" style={`background-color: ${poem.data.color.hex};`}></span>
+          <span class="color-name">{poem.data.color.name}</span>
+        </span>
+      )
     ) : (
       <span class="color-name">No color</span>
     )}

@@ -1,13 +1,21 @@
 ---
 id: "photobooth"
 title: "photobooth"
+color:
+  hex: "#000000"
+  name: "Black"
 written: 2026-06-30
 published: 2026-06-30
 backgroundColor: "#000000"
 textColor: "#FFFFFF"
 titleColor: "#FFFFFF"
+textFontMultiplier: 0.7
 ignoresDarkMode: true
 tags: ["💛", "photography", "cameras", "technology", "sight", "transit", "trains", "red", "black", "light", "photos", "frames", "machines", "love", "touch", "hands", "mouths", "marks", "drinks"]
+stripImage:
+  src: "/images/photobooth.jpg"
+  alt: "Black-and-white four-frame photobooth strip of two people kissing."
+  aspectRatio: "442 / 2347"
 ---
 
 shoes stick to the floor,
