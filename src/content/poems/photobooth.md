@@ -7,6 +7,7 @@ backgroundColor: "#000000"
 textColor: "#FFFFFF"
 titleColor: "#FFFFFF"
 ignoresDarkMode: true
+tags: ["💛", "photography", "cameras", "technology", "sight", "transit", "trains", "red", "black", "light", "photos", "frames", "machines", "love", "touch", "hands", "mouths", "marks", "drinks"]
 ---
 
 shoes stick to the floor,
