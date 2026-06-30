@@ -9,7 +9,7 @@ published: 2026-06-30
 backgroundColor: "#000000"
 textColor: "#FFFFFF"
 titleColor: "#FFFFFF"
-textFontMultiplier: 0.7
+textFontMultiplier: 0.8
 ignoresDarkMode: true
 tags: ["💛", "photography", "cameras", "technology", "sight", "transit", "trains", "red", "black", "light", "photos", "frames", "machines", "love", "touch", "hands", "mouths", "marks", "drinks"]
 stripImage:
