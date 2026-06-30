@@ -11,7 +11,12 @@ they attempt to do the same thing.
 <br>
 
 <figure>
-  <a href="https://www.instagram.com/p/DNGzHe7vYZh/"><img src="/images/mb.webp" alt="mb bischoff. a white trans woman in a red dress on a roof" loading="lazy"></a>
+  <a href="https://www.instagram.com/p/DNGzHe7vYZh/">
+    <picture>
+      <source srcset="/images/mb-dark.jpeg" media="(prefers-color-scheme: dark)">
+      <img src="/images/mb.webp" alt="mb bischoff wearing a red dress" loading="lazy">
+    </picture>
+  </a>
   <figcaption>photo by <a href="https://www.instagram.com/ashtray_angels/">jäger</a></figcaption>
 </figure>
 

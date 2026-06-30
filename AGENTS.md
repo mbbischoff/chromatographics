@@ -1,49 +1,30 @@
 # AGENTS.md
 
-This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
+Guidance for working in this Astro poetry site.
 
 ## Commands
 
-### Development
-- `npm run dev` - Start the development server (http://localhost:4321)
-- `npm run build` - Build the site for production
-- `npm run preview` - Preview the production build locally
+- `npm run dev` - Start the local dev server at `http://localhost:4321`
+- `npm run build` - Build the production site
+- `npm run preview` - Preview the production build
+- `npx astro check` - Run Astro and TypeScript checks
 
-### TypeScript Checking
-- `npx astro check` - Run TypeScript checking for Astro components
+## Project Notes
 
-## Architecture
+- Poems live in `src/content/poems/` as Markdown files with frontmatter.
+- Static pages live in `src/content/pages/`.
+- Content schemas are defined in `src/content/config.ts`.
+- The homepage lists poems in reverse chronological order.
+- Individual poem pages are generated from `src/pages/[id].astro`.
+- Styling is split between `src/styles/` and component-level styles.
 
-This is an Astro-based poetry website that displays a collection of poems with custom color theming.
+## Adding Poems
 
-### Content Structure
-The site uses Astro's content collections to manage poems and pages:
-- **Poems** (`src/content/poems/`): Markdown files with frontmatter containing metadata like title, colors, dates, and publication info
-- **Pages** (`src/content/pages/`): Static pages like the about page
-- **Schema** (`src/content/config.ts`): Defines the structure and validation for content collections
+Create a Markdown file in `src/content/poems/` with the required frontmatter:
 
-### Routing
-- `/` - Homepage displaying all poems in reverse chronological order
-- `/[id]` - Individual poem permalinks using dynamic routes
-- `/about` - About page
-- `/rss.xml` - RSS feed of poems
+- `id`
+- `title`
+- `written`
+- `published`
 
-### Key Components
-- **Poem.astro**: Renders individual poems with dynamic color theming. Has two modes:
-  - List view (on homepage) - clickable cards
-  - Permalink view - includes metadata table
-- **Layout.astro**: Main layout wrapper for all pages
-- The poem component automatically calculates background and text colors based on the title color using HSL luminance adjustments
-
-### Styling
-- Custom "Lacrima" font family loaded from `/public/fonts/`
-- CSS reset and main styles in `src/styles/`
-- Inline styles for dynamic color theming per poem
-- Poem cards have hover effects with shadow and transform animations
-
-### Content Management
-To add new poems:
-1. Create a markdown file in `src/content/poems/`
-2. Include required frontmatter: `id`, `title`, `written`, `published`
-3. Optional: `color` (with hex, name, link), `backgroundColor`, `textColor`, `felt`, `publications`, `preformatted`
-4. The poem will automatically appear on the homepage and get its own permalink
+Optional poem fields include `color`, `backgroundColor`, `textColor`, `felt`, `publications`, and `preformatted`.
